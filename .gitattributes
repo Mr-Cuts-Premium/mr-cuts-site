@@ -1,0 +1,6 @@
+# Texto normalizado para LF no repositório. O Pages serve como está, e sem
+# isto cada máquina commita a mesma página com final de linha diferente.
+* text=auto eol=lf
+
+*.png binary
+*.ttf binary

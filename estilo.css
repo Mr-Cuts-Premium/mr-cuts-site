@@ -1,0 +1,901 @@
+/* =====================================================================
+   MR CUT'S PREMIUM — folha única do site público.
+
+   A paleta e a tipografia NÃO são escolha nova: saem de design/tokens.json
+   do repositório do app, que por sua vez saiu do perfil da barbearia. Site e
+   app precisam parecer a mesma casa — quem clica no link da loja e cai aqui
+   tem que reconhecer.
+
+   Uma folha para as cinco páginas, e não cinco cópias: cópia divergir é
+   questão de tempo, e o defeito apareceria na página que o revisor da loja
+   abre, não na que a gente olha todo dia.
+
+   FONTE LOCAL, DE PROPÓSITO. Nada de Google Fonts: fonte buscada na rede
+   entrega o IP de cada visitante a um terceiro, e numa página que é
+   justamente a política de privacidade isso teria de ser declarado ali
+   mesmo. Só o Bodoni vem embutido — é a letra do monograma, o que carrega a
+   identidade. O corpo usa a pilha do sistema: 658 KB de Archivo numa landing
+   que precisa carregar rápido não se paga.
+   ===================================================================== */
+
+@font-face {
+  font-family: 'Bodoni Moda';
+  src: url('assets/fontes/BodoniModa.ttf') format('truetype-variations');
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+:root {
+  /* fundos */
+  --abismo: #0a0c10;
+  --noite: #101318;
+  --superficie: #171b22;
+  --elevada: #1e232b;
+
+  /* linhas */
+  --linha: #2a3039;
+  --linha-forte: #3c444f;
+
+  /* texto */
+  --creme: #f2f1ed;
+  --nevoa: #c4c7cd;
+  --apagado: #8b9099;
+
+  /* acento */
+  --cobre: #c67c3e;
+  --cobre-claro: #db9457;
+  --cobre-fundo: #2b1f12;
+  --sobre-cobre: #0a0c10;
+
+  /* semântica */
+  --salvia: #7e9b84;
+  --salvia-fundo: #16211a;
+  --carmim: #dc6579;
+  --carmim-fundo: #241419;
+
+  --serifa: 'Bodoni Moda', Georgia, 'Times New Roman', serif;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  --margem: 20px;
+  --largura: 1080px;
+  --leitura: 720px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--noite);
+  color: var(--creme);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+a {
+  color: var(--cobre-claro);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--cobre);
+}
+
+/* Foco visível. A recepção usa teclado, e o revisor da loja testa
+   acessibilidade — anel de foco removido é reprovação de graça. */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--cobre);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ------------------------------------------------------------------ tipos */
+
+h1,
+h2,
+h3 {
+  font-family: var(--serifa);
+  font-variation-settings: 'wght' 700, 'opsz' 18;
+  color: var(--creme);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5em;
+}
+
+/* O Bodoni só a partir de 20px — abaixo disso as hastes finas se partem
+   sobre fundo escuro. É regra dura, herdada de tipografia.dart. */
+h1 {
+  font-size: clamp(2.1rem, 6vw, 3.6rem);
+  font-variation-settings: 'wght' 700, 'opsz' 24;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-variation-settings: 'wght' 600, 'opsz' 14;
+}
+
+h4 {
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 2em 0 0.4em;
+  color: var(--creme);
+}
+
+p {
+  margin: 0 0 1em;
+  color: var(--nevoa);
+}
+
+strong {
+  color: var(--creme);
+  font-weight: 600;
+}
+
+.secao-rotulo {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--apagado);
+  margin: 0 0 0.75rem;
+}
+
+.chamada {
+  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+  color: var(--nevoa);
+  max-width: 46ch;
+}
+
+/* ----------------------------------------------------------------- caixas */
+
+.faixa {
+  padding: clamp(3rem, 8vw, 5.5rem) var(--margem);
+  border-top: 1px solid var(--linha);
+}
+
+.faixa:first-of-type {
+  border-top: 0;
+}
+
+.dentro {
+  max-width: var(--largura);
+  margin: 0 auto;
+}
+
+.leitura {
+  max-width: var(--leitura);
+  margin: 0 auto;
+}
+
+/* ------------------------------------------------------------------ topo */
+
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(16, 19, 24, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--linha);
+}
+
+.topo-dentro {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 0.9rem var(--margem);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.topo .marca {
+  height: 26px;
+  width: auto;
+  flex: none;
+}
+
+.topo nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  font-size: 0.9rem;
+}
+
+.topo nav a {
+  color: var(--nevoa);
+  text-decoration: none;
+}
+
+.topo nav a:hover {
+  color: var(--creme);
+}
+
+@media (max-width: 720px) {
+  .topo nav a.some-no-celular {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------------- botões */
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.4rem;
+  border-radius: 10px;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.botao-cheio {
+  background: var(--cobre);
+  /* Nunca creme sobre cobre: dá 3:1 e reprova em acessibilidade. */
+  color: var(--sobre-cobre);
+}
+
+.botao-cheio:hover {
+  background: var(--cobre-claro);
+  color: var(--sobre-cobre);
+}
+
+.botao-vazado {
+  border-color: var(--linha-forte);
+  color: var(--creme);
+  background: transparent;
+}
+
+.botao-vazado:hover {
+  border-color: var(--cobre);
+  color: var(--creme);
+  background: var(--superficie);
+}
+
+.botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+/* ------------------------------------------------------------------ hero */
+
+.hero {
+  padding: clamp(3rem, 9vw, 6rem) var(--margem) clamp(3rem, 7vw, 4.5rem);
+  background:
+    radial-gradient(120% 90% at 78% 8%, rgba(198, 124, 62, 0.16), transparent 62%),
+    linear-gradient(180deg, var(--abismo), var(--noite));
+}
+
+.hero-grade {
+  max-width: var(--largura);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 6vw, 4rem);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .hero-grade {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+}
+
+.hero h1 {
+  margin-bottom: 0.35em;
+}
+
+.selo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: var(--cobre-fundo);
+  color: var(--cobre-claro);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.hero-dados {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--linha);
+}
+
+.hero-dado .n {
+  font-family: var(--serifa);
+  font-size: 1.7rem;
+  font-variation-settings: 'wght' 700, 'opsz' 14;
+  display: block;
+  line-height: 1.1;
+}
+
+.hero-dado .r {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--apagado);
+}
+
+/* --------------------------------------------------------- o app na tela */
+
+.telas {
+  display: flex;
+  gap: clamp(1rem, 3vw, 1.75rem);
+  justify-content: center;
+  align-items: flex-start;
+  overflow-x: auto;
+  padding: 0.5rem 0 1.25rem;
+  scrollbar-width: thin;
+}
+
+/* Recriação das telas, não fotografia: o app ainda não rodou em aparelho.
+   Mesma paleta, mesma tipografia e os mesmos dados do cardápio real. */
+.aparelho {
+  flex: none;
+  width: 246px;
+  border-radius: 30px;
+  border: 1px solid var(--linha-forte);
+  background: var(--noite);
+  padding: 10px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+.aparelho-tela {
+  border-radius: 22px;
+  background: var(--noite);
+  overflow: hidden;
+  height: 460px;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.aparelho-corpo {
+  padding: 14px 13px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.aparelho-marca {
+  height: 17px;
+  width: auto;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.aparelho-barra {
+  display: flex;
+  border-top: 1px solid var(--linha);
+  background: var(--noite);
+}
+
+.aparelho-barra span {
+  flex: 1;
+  text-align: center;
+  padding: 9px 2px;
+  font-size: 8.5px;
+  letter-spacing: 0.02em;
+  color: var(--apagado);
+}
+
+.aparelho-barra span.ativo {
+  color: var(--cobre);
+}
+
+.aparelho-barra span::before {
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin: 0 auto 3px;
+  border-radius: 5px;
+  border: 1.4px solid currentColor;
+  opacity: 0.85;
+}
+
+.cartao-app {
+  background: var(--superficie);
+  border: 1px solid var(--linha);
+  border-radius: 12px;
+  padding: 11px 12px;
+  margin-bottom: 9px;
+}
+
+.cartao-app.acento {
+  border-color: var(--cobre);
+  background: linear-gradient(180deg, var(--cobre-fundo), var(--superficie));
+}
+
+.cartao-app.alerta {
+  border-color: var(--carmim);
+  background: var(--carmim-fundo);
+}
+
+.cartao-app .rot {
+  font-size: 8.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--apagado);
+  margin-bottom: 4px;
+}
+
+.cartao-app .tit {
+  font-family: var(--serifa);
+  font-size: 16px;
+  font-variation-settings: 'wght' 600, 'opsz' 14;
+  color: var(--creme);
+  line-height: 1.2;
+}
+
+.cartao-app .sub {
+  color: var(--nevoa);
+  font-size: 11px;
+}
+
+.cartao-app .preco {
+  color: var(--cobre-claro);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.legenda-tela {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--apagado);
+  margin-top: 0.6rem;
+}
+
+.grade-horas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.grade-horas span {
+  border: 1px solid var(--linha);
+  border-radius: 8px;
+  padding: 6px 0;
+  text-align: center;
+  font-size: 10.5px;
+  color: var(--nevoa);
+  background: var(--superficie);
+}
+
+.grade-horas span.escolhida {
+  background: var(--cobre);
+  border-color: var(--cobre);
+  color: var(--sobre-cobre);
+  font-weight: 700;
+}
+
+.grade-horas span.ocupada {
+  color: var(--apagado);
+  opacity: 0.4;
+  text-decoration: line-through;
+}
+
+/* --------------------------------------------------------------- cartões */
+
+.grade {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.cartao {
+  background: var(--superficie);
+  border: 1px solid var(--linha);
+  border-radius: 14px;
+  padding: 1.4rem;
+}
+
+.cartao h3 {
+  margin-bottom: 0.35rem;
+}
+
+.cartao p {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.cartao-atalho {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-decoration: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.cartao-atalho:hover {
+  border-color: var(--cobre);
+  background: var(--elevada);
+}
+
+.cartao-atalho .titulo {
+  font-family: var(--serifa);
+  font-size: 1.15rem;
+  font-variation-settings: 'wght' 600, 'opsz' 14;
+  color: var(--creme);
+}
+
+.cartao-atalho .desc {
+  color: var(--nevoa);
+  font-size: 0.9rem;
+}
+
+.cartao-atalho .seta {
+  color: var(--cobre);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 0.35rem;
+}
+
+/* -------------------------------------------------------------- serviços */
+
+.cardapio {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.cardapio ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cardapio li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--linha);
+}
+
+.cardapio li:last-child {
+  border-bottom: 0;
+}
+
+.cardapio .nome {
+  color: var(--creme);
+}
+
+.cardapio .pontilhado {
+  flex: 1;
+  border-bottom: 1px dotted var(--linha-forte);
+  transform: translateY(-3px);
+}
+
+.cardapio .valor {
+  color: var(--cobre-claro);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.cardapio .dur {
+  color: var(--apagado);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------- planos */
+
+.plano {
+  display: flex;
+  flex-direction: column;
+}
+
+.plano .preco {
+  font-family: var(--serifa);
+  font-size: 2rem;
+  font-variation-settings: 'wght' 700, 'opsz' 16;
+  color: var(--creme);
+  line-height: 1.1;
+  margin: 0.4rem 0 0.1rem;
+}
+
+.plano .mes {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--apagado);
+  font-weight: 400;
+}
+
+.plano ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  color: var(--nevoa);
+}
+
+.plano li {
+  padding-left: 1.2rem;
+  position: relative;
+  margin-bottom: 0.4rem;
+}
+
+.plano li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cobre);
+}
+
+.plano.destaque {
+  border-color: var(--cobre);
+}
+
+/* ----------------------------------------------------------------- avisos */
+
+.aviso {
+  border: 1px solid var(--linha);
+  border-left: 3px solid var(--cobre);
+  background: var(--superficie);
+  border-radius: 0 10px 10px 0;
+  padding: 1.1rem 1.3rem;
+  margin: 1.75rem 0;
+}
+
+.aviso p:last-child {
+  margin-bottom: 0;
+}
+
+.aviso.pendente {
+  border-left-color: var(--carmim);
+  background: var(--carmim-fundo);
+}
+
+.aviso.ok {
+  border-left-color: var(--salvia);
+  background: var(--salvia-fundo);
+}
+
+/* ---------------------------------------------------------------- tabelas */
+
+.tabela-caixa {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border: 1px solid var(--linha);
+  border-radius: 12px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.92rem;
+  min-width: 460px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--linha);
+  vertical-align: top;
+}
+
+th {
+  background: var(--elevada);
+  color: var(--creme);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+td {
+  color: var(--nevoa);
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+/* ------------------------------------------------------------ documentos */
+
+.doc {
+  padding: clamp(2.5rem, 6vw, 4rem) var(--margem) 4rem;
+}
+
+.doc .leitura > h2 {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--linha);
+  font-size: 1.5rem;
+}
+
+.doc .leitura > h2:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.doc ul,
+.doc ol {
+  color: var(--nevoa);
+  padding-left: 1.3rem;
+}
+
+.doc li {
+  margin-bottom: 0.5rem;
+}
+
+.data-doc {
+  font-size: 0.85rem;
+  color: var(--apagado);
+  margin-bottom: 2rem;
+}
+
+.volta {
+  display: inline-block;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+}
+
+/* ------------------------------------------------------------------ rodapé */
+
+.rodape {
+  border-top: 1px solid var(--linha);
+  background: var(--abismo);
+  padding: 3rem var(--margem) 2.5rem;
+  font-size: 0.9rem;
+}
+
+.rodape-grade {
+  max-width: var(--largura);
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.rodape h4 {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--apagado);
+  font-weight: 700;
+}
+
+.rodape ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rodape li {
+  margin-bottom: 0.45rem;
+}
+
+.rodape a {
+  color: var(--nevoa);
+  text-decoration: none;
+}
+
+.rodape a:hover {
+  color: var(--cobre-claro);
+}
+
+.rodape .marca {
+  height: 30px;
+  width: auto;
+  margin-bottom: 0.9rem;
+}
+
+.rodape-fim {
+  max-width: var(--largura);
+  margin: 2.5rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--linha);
+  color: var(--apagado);
+  font-size: 0.82rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  justify-content: space-between;
+}
+
+/* ------------------------------------------------------------------- FAQ */
+
+details {
+  border: 1px solid var(--linha);
+  border-radius: 12px;
+  background: var(--superficie);
+  padding: 0 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+summary {
+  cursor: pointer;
+  padding: 1rem 0;
+  font-weight: 600;
+  color: var(--creme);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: '+';
+  color: var(--cobre);
+  font-size: 1.3rem;
+  line-height: 1;
+  flex: none;
+}
+
+details[open] summary::after {
+  content: '\2212';
+}
+
+details > *:not(summary) {
+  padding-bottom: 0.4rem;
+}
+
+details p:last-child {
+  margin-bottom: 1rem;
+}
