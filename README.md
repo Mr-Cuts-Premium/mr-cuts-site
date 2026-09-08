@@ -44,6 +44,37 @@ python -m http.server 8000
 
 E abrir <http://localhost:8000>.
 
+## Sincronizar o cardápio com o app
+
+O cardápio tem fallback estático no `index.html`. Na carga da página, o
+`cardapio.js` consulta somente os serviços ativos pela API REST do Supabase e
+atualiza preço e duração; se a consulta falhar, o HTML original permanece na
+tela. A chave usada no navegador deve ser a chave pública `anon`, protegida
+pelas políticas de leitura da tabela no Supabase.
+
+Preencha `cardapio-config.js` com a URL pública do projeto, a chave `anon` e
+os nomes reais das colunas usadas pelo app. O padrão já contempla
+`servicos`, `nome`, `categoria`, `duracao_min`, `preco_centavos`,
+`preco_a_partir_de`, `ativo` e `ordem`. O preço é armazenado em centavos e o
+site divide por 100 antes de exibi-lo.
+
+Para atualizar a linha de base estática antes de publicar, use Node 18 ou mais
+recente e defina as mesmas informações no ambiente. No PowerShell:
+
+```powershell
+$env:SUPABASE_URL = 'https://seu-projeto.supabase.co'
+$env:SUPABASE_ANON_KEY = 'sua-chave-anon'
+node gerar-cardapio.js
+```
+
+O gerador usa `SUPABASE_PRICE_DIVISOR=100` por padrão, como o app. Altere essa
+variável somente se o banco passar a armazenar preços em reais.
+
+O script reescreve somente o trecho entre `CARDAPIO:inicio` e
+`CARDAPIO:fim`. Ele é uma conveniência para manter o fallback atualizado; a
+sincronização em tempo real do `cardapio.js` continua sendo a garantia contra
+preços antigos.
+
 ## Decisões que não são acidente
 
 **A paleta e a tipografia saem do app.** Vêm de `design/tokens.json` no
