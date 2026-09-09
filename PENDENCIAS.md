@@ -27,9 +27,9 @@ grep -rn "a definir\|a confirmar" *.html
 
 | # | O que falta | Onde aparece |
 |---|---|---|
-| 6 | **Endereço da barbearia** | landing (atalhos e rodapé), suporte |
 | 7 | **Telefone / WhatsApp** | landing (atalho "Pelo WhatsApp"), suporte |
-| 8 | **Links das lojas** | landing (atalho "Pelo aplicativo"), hoje escrito "Em breve nas lojas" |
+| 8 | **URL do app web** (agendar pelo site) | landing (atalho "Pelo site"), hoje "Em breve neste endereço" |
+| 8b | **Links das lojas** | landing (atalho "Pelo aplicativo"), hoje "Em breve nas lojas" |
 | 9 | **Região dos servidores do Supabase** | política §6 — transferência internacional de dados é declaração de LGPD |
 | 10 | **Valor da multa por falta** | termos §5. Em `seed.sql` o valor está marcado como provisório; o texto hoje diz que a barbearia define, sem número |
 | 11 | **Cancelamento do plano** — prazo, forma e o que acontece com o mês pago | termos §8 |
@@ -48,7 +48,8 @@ Para ninguém sair conferindo o que já foi conferido. Tudo abaixo saiu de
 - Os 24 serviços, com preço e duração, e quais saem "a partir de"
 - Os 6 planos, com preço e os dias em que cada um vale
 - A equipe: Vandinho (dono, atende), Felipe, Breno, e Eliane na recepção
-- Jornada: segunda a sábado, 8h às 20h
+- Endereço: Av. Miguel Perrela, 987 — Lj 18, Castelo, Belo Horizonte — MG, 31330-290
+- Jornada: seg–sex 8h–20h, sábado 8h–18h, domingo fechado
 - Cidade: Belo Horizonte, MG
 - Instagram: `@barbearia_mrcutspremium`
 - As regras de agendamento: grade de 10 minutos, até um ano à frente, até 5

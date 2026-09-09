@@ -56,8 +56,8 @@
           <span class="r">serviços no cardápio</span>
         </div>
         <div class="hero-dado">
-          <span class="n">Seg&ndash;Sáb</span>
-          <span class="r">8h às 20h</span>
+          <span class="n">Seg&ndash;Sex</span>
+          <span class="r">8h–20h · sáb até 18h</span>
         </div>
         <div class="hero-dado">
           <span class="n">10 min</span>
@@ -79,7 +79,7 @@
                 <div class="rot">Próximo atendimento</div>
                 <div class="tit">Quinta, 11 de setembro</div>
                 <div class="sub">14:30 &middot; Corte e Barba</div>
-                <div class="sub">com Felipe</div>
+                <div class="sub">com Vandinho</div>
               </div>
               <div class="cartao-app">
                 <div class="rot">Seu plano</div>
@@ -112,7 +112,7 @@
               </div>
               <div class="cartao-app">
                 <div class="rot">Profissional</div>
-                <div class="tit">Felipe</div>
+                <div class="tit">Vandinho</div>
               </div>
               <div class="rot" style="margin:12px 0 7px">Quinta, 11 de setembro</div>
               <div class="grade-horas">
@@ -147,18 +147,27 @@
     <p class="secao-rotulo">Atalhos</p>
     <h2>Como marcar o seu horário</h2>
     <p class="chamada">
-      Quatro caminhos para a mesma cadeira. O aplicativo é o mais rápido:
-      mostra o horário livre de cada profissional e confirma na hora.
+      Cinco caminhos para a mesma cadeira. No site ou no app você vê o horário
+      livre de cada profissional e confirma na hora &mdash; sem fila e sem
+      telefonema.
     </p>
 
     <div class="grade" style="margin-top:2rem">
-      <!-- PENDENTE: trocar por link real quando o app for publicado.
-           Enquanto não existe, fica cartão sem href — link morto numa
-           landing é pior que um "em breve" honesto. -->
+      <!-- PENDENTE: trocar pelo URL público do app web quando o domínio
+           e o deploy estiverem no ar. Sem href morto até lá. -->
+      <div class="cartao cartao-atalho">
+        <span class="titulo">Pelo site</span>
+        <span class="desc">A mesma agenda do aplicativo, no navegador do
+          celular ou do computador. Escolhe serviço, profissional e horário.</span>
+        <span class="seta" style="color:var(--apagado)">Em breve neste endereço</span>
+      </div>
+
+      <!-- PENDENTE: trocar pelos links reais das lojas quando o app for
+           publicado. -->
       <div class="cartao cartao-atalho">
         <span class="titulo">Pelo aplicativo</span>
-        <span class="desc">Escolhe serviço, profissional e horário. Confirma
-          sozinho, sem esperar retorno.</span>
+        <span class="desc">No celular, com a mesma confirmação automática.
+          Ideal pra quem marca com frequência.</span>
         <span class="seta" style="color:var(--apagado)">Em breve nas lojas</span>
       </div>
 
@@ -179,19 +188,23 @@
         <span class="seta">Abrir perfil &rarr;</span>
       </a>
 
-      <div class="cartao cartao-atalho">
+      <a class="cartao cartao-atalho"
+         href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Miguel+Perrela,+987+-+Lj+18+-+Castelo,+Belo+Horizonte+-+MG,+31330-290"
+         target="_blank" rel="noopener">
         <span class="titulo">Na loja</span>
-        <span class="desc">Belo Horizonte, MG. Segunda a sábado, das 8h
-          às 20h.</span>
-        <span class="seta" style="color:var(--apagado)">Endereço a confirmar</span>
-      </div>
+        <span class="desc">Av. Miguel Perrela, 987 &mdash; Lj 18<br>
+          Castelo, Belo Horizonte &mdash; MG, 31330-290<br>
+          Seg–sex 8h–20h · sáb 8h–18h · domingo fechado</span>
+        <span class="seta">Abrir no mapa &rarr;</span>
+      </a>
     </div>
 
     <div class="aviso">
       <p><strong>Cancelou? Sem problema &mdash; avise com antecedência.</strong>
-      O horário pode ser cancelado pelo aplicativo até <strong>3 horas</strong>
-      antes do atendimento. Depois disso a cadeira já ficou reservada e a casa
-      cobra pela falta. A regra atual aparece sempre dentro do app.</p>
+      O horário pode ser cancelado pelo site ou pelo aplicativo até
+      <strong>3 horas</strong> antes do atendimento. Depois disso a cadeira já
+      ficou reservada e a casa cobra pela falta. A regra atual aparece sempre
+      na hora de cancelar.</p>
     </div>
   </div>
 </section>
@@ -207,51 +220,52 @@
       do cabelo e é acertado no balcão.
     </p>
 
+    <p id="cardapio-status" class="cardapio-status" aria-live="polite" hidden></p>
+
     <!-- CARDAPIO:inicio -->
     <div class="cardapio" style="margin-top:2.5rem">
       <div>
         <h3>Corte</h3>
         <ul>
-          <li data-servico="corte"><span class="nome">Corte</span><span class="pontilhado"></span><span class="dur">30 min</span><span class="valor">R$ 60,00</span></li>
-          <li data-servico="corte-infantil"><span class="nome">Corte infantil</span><span class="pontilhado"></span><span class="dur">45 min</span><span class="valor">R$ 60,00</span></li>
-          <li data-servico="corte-e-barba"><span class="nome">Corte e Barba</span><span class="pontilhado"></span><span class="dur">60 min</span><span class="valor">R$ 100,00</span></li>
-          <li data-servico="corte-e-barboterapia"><span class="nome">Corte e Barboterapia</span><span class="pontilhado"></span><span class="dur">60 min</span><span class="valor">R$ 110,00</span></li>
-          <li data-servico="corte-e-sobrancelha"><span class="nome">Corte e sobrancelha</span><span class="pontilhado"></span><span class="dur">45 min</span><span class="valor">R$ 70,00</span></li>
-          <li data-servico="corte-barba-e-sobrancelha"><span class="nome">Corte, Barba e Sobrancelha</span><span class="pontilhado"></span><span class="dur">60 min</span><span class="valor">R$ 115,00</span></li>
-          <li data-servico="pezinho"><span class="nome">Pezinho</span><span class="pontilhado"></span><span class="dur">15 min</span><span class="valor">R$ 30,00</span></li>
-          <li data-servico="raspagem"><span class="nome">Raspagem</span><span class="pontilhado"></span><span class="dur">30 min</span><span class="valor">R$ 40,00</span></li>
-          <li data-servico="nudred"><span class="nome">Nudred</span><span class="pontilhado"></span><span class="dur">30 min</span><span class="valor">R$ 30,00</span></li>
+          <li data-servico="corte"><span class="nome">Corte</span><span class="pontilhado"></span><span class="dur">30 min</span><span class="valor">R$ 65,00</span></li>
+          <li data-servico="corte-e-barba"><span class="nome">Corte e Barba</span><span class="pontilhado"></span><span class="dur">60 min</span><span class="valor">R$ 100,00</span></li>
+          <li data-servico="corte-e-barboterapia"><span class="nome">Corte e Barboterapia</span><span class="pontilhado"></span><span class="dur">60 min</span><span class="valor">R$ 110,00</span></li>
+          <li data-servico="corte-e-sobrancelha"><span class="nome">Corte e sobrancelha</span><span class="pontilhado"></span><span class="dur">45 min</span><span class="valor">R$ 70,00</span></li>
+          <li data-servico="corte-infantil"><span class="nome">Corte infantil</span><span class="pontilhado"></span><span class="dur">45 min</span><span class="valor">R$ 60,00</span></li>
+          <li data-servico="corte-barba-e-sobrancelha"><span class="nome">Corte, Barba e Sobrancelha</span><span class="pontilhado"></span><span class="dur">60 min</span><span class="valor">R$ 115,00</span></li>
+          <li data-servico="nudred"><span class="nome">Nudred</span><span class="pontilhado"></span><span class="dur">30 min</span><span class="valor">R$ 30,00</span></li>
+          <li data-servico="pezinho"><span class="nome">Pezinho</span><span class="pontilhado"></span><span class="dur">15 min</span><span class="valor">R$ 30,00</span></li>
+          <li data-servico="raspagem"><span class="nome">Raspagem</span><span class="pontilhado"></span><span class="dur">30 min</span><span class="valor">R$ 40,00</span></li>
         </ul>
       </div>
 
       <div>
         <h3>Barba</h3>
         <ul>
-          <li data-servico="barba-express"><span class="nome">Barba Express</span><span class="pontilhado"></span><span class="dur">30 min</span><span class="valor">R$ 55,00</span></li>
-          <li data-servico="barba-e-pezinho"><span class="nome">Barba e pezinho</span><span class="pontilhado"></span><span class="dur">45 min</span><span class="valor">R$ 65,00</span></li>
-          <li data-servico="barba-e-raspagem"><span class="nome">Barba e Raspagem</span><span class="pontilhado"></span><span class="dur">45 min</span><span class="valor">R$ 70,00</span></li>
-          <li data-servico="barboterapia"><span class="nome">Barboterapia</span><span class="pontilhado"></span><span class="dur">30 min</span><span class="valor">R$ 60,00</span></li>
-          <li data-servico="bigode"><span class="nome">Bigode</span><span class="pontilhado"></span><span class="dur">15 min</span><span class="valor">R$ 15,00</span></li>
+          <li data-servico="barba-e-pezinho"><span class="nome">Barba e pezinho</span><span class="pontilhado"></span><span class="dur">45 min</span><span class="valor">R$ 65,00</span></li>
+          <li data-servico="barba-e-raspagem"><span class="nome">Barba e Raspagem</span><span class="pontilhado"></span><span class="dur">45 min</span><span class="valor">R$ 70,00</span></li>
+          <li data-servico="barba-express"><span class="nome">Barba Express</span><span class="pontilhado"></span><span class="dur">30 min</span><span class="valor">R$ 55,00</span></li>
+          <li data-servico="barboterapia"><span class="nome">Barboterapia</span><span class="pontilhado"></span><span class="dur">30 min</span><span class="valor">R$ 60,00</span></li>
+          <li data-servico="bigode"><span class="nome">Bigode</span><span class="pontilhado"></span><span class="dur">15 min</span><span class="valor">R$ 15,00</span></li>
         </ul>
-
         <h3 style="margin-top:2rem">Estética</h3>
         <ul>
-          <li data-servico="sobrancelha"><span class="nome">Sobrancelha</span><span class="pontilhado"></span><span class="dur">15 min</span><span class="valor">R$ 30,00</span></li>
-          <li data-servico="escova"><span class="nome">Escova</span><span class="pontilhado"></span><span class="dur">15 min</span><span class="valor">R$ 30,00</span></li>
-          <li data-servico="depilacao-nasal"><span class="nome">Depilação Nasal</span><span class="pontilhado"></span><span class="dur">15 min</span><span class="valor">R$ 20,00</span></li>
-          <li data-servico="depilacao-do-ouvido"><span class="nome">Depilação do Ouvido</span><span class="pontilhado"></span><span class="dur">15 min</span><span class="valor">R$ 20,00</span></li>
+          <li data-servico="depilacao-do-ouvido"><span class="nome">Depilação do Ouvido</span><span class="pontilhado"></span><span class="dur">15 min</span><span class="valor">R$ 20,00</span></li>
+          <li data-servico="depilacao-nasal"><span class="nome">Depilação Nasal</span><span class="pontilhado"></span><span class="dur">15 min</span><span class="valor">R$ 20,00</span></li>
+          <li data-servico="escova"><span class="nome">Escova</span><span class="pontilhado"></span><span class="dur">15 min</span><span class="valor">R$ 30,00</span></li>
+          <li data-servico="sobrancelha"><span class="nome">Sobrancelha</span><span class="pontilhado"></span><span class="dur">15 min</span><span class="valor">R$ 30,00</span></li>
         </ul>
       </div>
 
       <div>
         <h3>Química</h3>
         <ul>
-          <li data-servico="alisamento"><span class="nome">Alisamento</span><span class="pontilhado"></span><span class="dur">30 min</span><span class="valor">a partir de R$ 50,00</span></li>
-          <li data-servico="hidratacao"><span class="nome">Hidratação</span><span class="pontilhado"></span><span class="dur">15 min</span><span class="valor">a partir de R$ 40,00</span></li>
-          <li data-servico="luzes"><span class="nome">Luzes</span><span class="pontilhado"></span><span class="dur">60 min</span><span class="valor">R$ 85,00</span></li>
-          <li data-servico="platinado"><span class="nome">Platinado</span><span class="pontilhado"></span><span class="dur">30 min</span><span class="valor">a partir de R$ 180,00</span></li>
-          <li data-servico="progressiva"><span class="nome">Progressiva</span><span class="pontilhado"></span><span class="dur">60 min</span><span class="valor">a partir de R$ 90,00</span></li>
-          <li data-servico="tintura"><span class="nome">Tintura</span><span class="pontilhado"></span><span class="dur">30 min</span><span class="valor">a partir de R$ 50,00</span></li>
+          <li data-servico="alisamento"><span class="nome">Alisamento</span><span class="pontilhado"></span><span class="dur">30 min</span><span class="valor">a partir de R$ 50,00</span></li>
+          <li data-servico="hidratacao"><span class="nome">Hidratação</span><span class="pontilhado"></span><span class="dur">15 min</span><span class="valor">a partir de R$ 40,00</span></li>
+          <li data-servico="luzes"><span class="nome">Luzes</span><span class="pontilhado"></span><span class="dur">60 min</span><span class="valor">R$ 85,00</span></li>
+          <li data-servico="platinado"><span class="nome">Platinado</span><span class="pontilhado"></span><span class="dur">30 min</span><span class="valor">a partir de R$ 180,00</span></li>
+          <li data-servico="progressiva"><span class="nome">Progressiva</span><span class="pontilhado"></span><span class="dur">60 min</span><span class="valor">a partir de R$ 90,00</span></li>
+          <li data-servico="tintura"><span class="nome">Tintura</span><span class="pontilhado"></span><span class="dur">30 min</span><span class="valor">a partir de R$ 50,00</span></li>
         </ul>
       </div>
     </div>
@@ -378,7 +392,7 @@
 <section class="faixa" id="equipe">
   <div class="dentro">
     <p class="secao-rotulo">A casa</p>
-    <h2>Quem senta na sua cadeira</h2>
+    <h2>Quem te atende</h2>
 
     <div class="grade" style="margin-top:2rem">
       <div class="cartao">
@@ -407,8 +421,12 @@
   <div class="rodape-grade">
     <div>
       <img class="marca" src="assets/marca.svg" alt="MR CUT'S PREMIUM">
-      <p style="font-size:0.88rem">Barbearia em Belo Horizonte, MG.<br>
-      Segunda a sábado, das 8h às 20h.</p>
+      <p style="font-size:0.88rem">
+        Av. Miguel Perrela, 987 &mdash; Lj 18<br>
+        Castelo, Belo Horizonte &mdash; MG, 31330-290</p>
+      <p style="font-size:0.88rem; margin-top:0.75rem">
+        Seg–sex 8h–20h · sáb 8h–18h<br>
+        Domingo fechado</p>
     </div>
     <div>
       <h4>A barbearia</h4>

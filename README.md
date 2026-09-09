@@ -48,7 +48,8 @@ E abrir <http://localhost:8000>.
 
 O cardápio tem fallback estático no `index.html`. Na carga da página, o
 `cardapio.js` consulta somente os serviços ativos pela API REST do Supabase e
-atualiza preço e duração; se a consulta falhar, o HTML original permanece na
+monta de novo a grade (inclui serviço novo, remove o que saiu do ar e
+atualiza preço/duração). Se a consulta falhar, o HTML original permanece na
 tela. A chave usada no navegador deve ser a chave pública `anon`, protegida
 pelas políticas de leitura da tabela no Supabase.
 

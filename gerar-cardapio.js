@@ -21,6 +21,25 @@ const columns = {
 };
 const priceDivisor = Number(process.env.SUPABASE_PRICE_DIVISOR || 100);
 
+// Colunas do cardápio: título da coluna + grupos (categoria do banco, case-insensitive).
+const LAYOUT = [
+  {
+    title: 'Corte',
+    groups: [{ title: null, categories: ['corte'] }]
+  },
+  {
+    title: 'Barba',
+    groups: [
+      { title: null, categories: ['barba'] },
+      { title: 'Estética', categories: ['estetica'] }
+    ]
+  },
+  {
+    title: 'Química',
+    groups: [{ title: null, categories: ['quimica'] }]
+  }
+];
+
 if (!url || !key) {
   throw new Error('Defina SUPABASE_URL e SUPABASE_ANON_KEY antes de gerar.');
 }
@@ -40,11 +59,10 @@ async function generate() {
   }
 
   const services = await response.json();
-  const columnsByCategory = new Map([
-    ['Corte', ['Corte']],
-    ['Barba', ['Barba', 'Estética']],
-    ['Química', ['Química']]
-  ]);
+  if (!Array.isArray(services) || services.length === 0) {
+    throw new Error('Nenhum serviço ativo retornado pelo Supabase.');
+  }
+
   const html = await fs.readFile(htmlPath, 'utf8');
   const start = html.indexOf('    <!-- CARDAPIO:inicio -->');
   const end = html.indexOf('    <!-- CARDAPIO:fim -->');
@@ -52,24 +70,47 @@ async function generate() {
     throw new Error('Marcadores CARDAPIO não encontrados em index.html.');
   }
 
-  const generated = [...columnsByCategory].map(([title, categories]) => {
-    const items = services.filter((service) => categories.includes(service[columns.category]));
-    return `<div>\n        <h3>${escapeHtml(title)}</h3>\n        <ul>\n${items.map(renderItem).join('')}        </ul>\n      </div>`;
-  }).join('\n\n      ');
-
-  const replacement = `    <!-- CARDAPIO:inicio -->\n    <div class="cardapio" style="margin-top:2.5rem">\n      ${generated}\n    </div>\n`;
+  const generated = LAYOUT.map((column) => renderColumn(column, services)).join('\n\n      ');
+  const replacement =
+    `    <!-- CARDAPIO:inicio -->\n` +
+    `    <div class="cardapio" style="margin-top:2.5rem">\n` +
+    `      ${generated}\n` +
+    `    </div>\n`;
   await fs.writeFile(htmlPath, html.slice(0, start) + replacement + html.slice(end), 'utf8');
   console.log(`Cardápio atualizado com ${services.length} serviços.`);
 }
 
+function renderColumn(column, services) {
+  const parts = [];
+  column.groups.forEach((group, index) => {
+    const items = services.filter((service) =>
+      group.categories.includes(normalizeCategory(service[columns.category])));
+    if (items.length === 0) {
+      return;
+    }
+    if (group.title) {
+      const style = index > 0 ? ' style="margin-top:2rem"' : '';
+      parts.push(`        <h3${style}>${escapeHtml(group.title)}</h3>`);
+    } else if (index === 0) {
+      parts.push(`        <h3>${escapeHtml(column.title)}</h3>`);
+    }
+    parts.push(`        <ul>\n${items.map(renderItem).join('')}        </ul>`);
+  });
+  return `<div>\n${parts.join('\n')}\n      </div>`;
+}
+
 function renderItem(service) {
-  const id = slugify(service[columns.id] || service[columns.name]);
+  const id = slugify(service[columns.name] || service[columns.id]);
   const price = `${service[columns.fromPrice] ? 'a partir de ' : ''}${formatPrice(service[columns.price] / priceDivisor)}`;
-  return `          <li data-servico="${escapeHtml(id)}"><span class="nome">${escapeHtml(service[columns.name])}</span><span class="pontilhado"></span><span class="dur">${service[columns.duration]} min</span><span class="valor">${price}</span></li>\n`;
+  return `          <li data-servico="${escapeHtml(id)}"><span class="nome">${escapeHtml(service[columns.name])}</span><span class="pontilhado"></span><span class="dur">${escapeHtml(String(service[columns.duration]))} min</span><span class="valor">${escapeHtml(price)}</span></li>\n`;
 }
 
 function formatPrice(value) {
   return Number(value).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
+
+function normalizeCategory(value) {
+  return slugify(value || '');
 }
 
 function slugify(value) {
