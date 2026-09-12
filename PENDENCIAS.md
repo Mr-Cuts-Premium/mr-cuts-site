@@ -31,7 +31,7 @@ grep -rn "a definir\|a confirmar" *.html
 | 7 | **Telefone / WhatsApp** | landing (atalho "Pelo WhatsApp"), suporte |
 | 8 | **URL do app web** (agendar pelo site) | landing (atalho "Pelo site"), hoje "Em breve neste endereço" |
 | 8b | **Links das lojas** | landing (atalho "Pelo aplicativo"), hoje "Em breve nas lojas" |
-| 8c | **URL Flutter web na equipe** | landing `#equipe` — hoje `app.html?barbeiro=SLUG`; trocar por `/barbeiro/slug` no deploy |
+| 8c | **URL Flutter web na equipe** | landing `#equipe` — links `/barbeiro/slug` (app captura; Pages ainda precisa redirecionar para o web app) |
 | 9 | **Região dos servidores do Supabase** | política §6 — transferência internacional de dados é declaração de LGPD |
 | 10 | **Valor da multa por falta** | termos §5. Em `seed.sql` o valor está marcado como provisório; o texto hoje diz que a barbearia define, sem número |
 | 11 | **Cancelamento do plano** — prazo, forma e o que acontece com o mês pago | termos §8 |
