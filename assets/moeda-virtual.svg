@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- MR CUT'S PREMIUM  moeda virtual (fase 2). -->
+<!-- MR CUTS PREMIUM — moeda virtual (fase 2). -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
   <defs>
     <radialGradient id="face" cx="38%" cy="32%" r="68%">
@@ -20,12 +20,10 @@
     </linearGradient>
   </defs>
 
-  <!-- Outer rim -->
   <circle cx="100" cy="100" r="96" fill="url(#rim)" stroke="#6a6a6a" stroke-width="1.5"/>
   <circle cx="100" cy="100" r="88" fill="none" stroke="url(#rimInner)" stroke-width="3"/>
   <circle cx="100" cy="100" r="78" fill="url(#face)" stroke="#9a9a9a" stroke-width="1"/>
 
-  <!-- Four stars on ring -->
   <g fill="#6a6a6a" opacity="0.85">
     <polygon points="100,14 101.8,18.5 106.5,18.5 102.8,21.5 104.5,26 100,23.2 95.5,26 97.2,21.5 93.5,18.5 98.2,18.5"/>
     <polygon points="186,100 182.5,101.8 182.5,106.5 179.5,102.8 175,104.5 177.8,100 175,95.5 179.5,97.2 182.5,93.5 182.5,98.2"/>
@@ -33,29 +31,25 @@
     <polygon points="14,100 17.5,98.2 17.5,93.5 20.5,97.2 26,95.5 23.2,100 26,104.5 20.5,102.8 17.5,106.5 17.5,101.8"/>
   </g>
 
-  <!-- Top arc text -->
   <path id="topArc" d="M 38 100 A 62 62 0 0 1 162 100" fill="none"/>
   <text font-family="Arial, Helvetica, sans-serif" font-size="7.5" font-weight="700"
         letter-spacing="1.2" fill="#4a4a4a">
     <textPath href="#topArc" startOffset="50%" text-anchor="middle">MR CUTS PREMIUM</textPath>
   </text>
 
-  <!-- Bottom arc text -->
   <path id="botArc" d="M 162 100 A 62 62 0 0 1 38 100" fill="none"/>
   <text font-family="Arial, Helvetica, sans-serif" font-size="7" font-weight="600"
         letter-spacing="0.8" fill="#555">
     <textPath href="#botArc" startOffset="50%" text-anchor="middle">MOEDA VIRTUAL</textPath>
   </text>
 
-  <!-- Left text -->
   <text x="28" y="88" font-family="Arial, Helvetica, sans-serif" font-size="4.5"
         font-weight="600" fill="#555" text-anchor="middle">ESTILO</text>
   <text x="28" y="96" font-family="Arial, Helvetica, sans-serif" font-size="4"
-        fill="#666" text-anchor="middle">É</text>
+        fill="#666" text-anchor="middle">E</text>
   <text x="28" y="104" font-family="Arial, Helvetica, sans-serif" font-size="4.5"
-        font-weight="600" fill="#555" text-anchor="middle">CONFIANÇA</text>
+        font-weight="600" fill="#555" text-anchor="middle">CONFIANCA</text>
 
-  <!-- Right text + crown -->
   <text x="172" y="90" font-family="Arial, Helvetica, sans-serif" font-size="5"
         font-weight="700" fill="#4a4a4a" text-anchor="middle">MR CUTS</text>
   <path d="M 164 94 L 166 98 L 168 95 L 170 98 L 172 95 L 174 98 L 176 94 L 176 100 L 164 100 Z"
@@ -63,18 +57,12 @@
   <text x="172" y="108" font-family="Arial, Helvetica, sans-serif" font-size="4.5"
         font-weight="600" fill="#555" text-anchor="middle">PREMIUM</text>
 
-  <!-- Center: head silhouette with handlebar mustache -->
   <g transform="translate(100 102)" fill="#5a5a5a">
-    <!-- Head -->
     <ellipse cx="0" cy="-8" rx="18" ry="22" fill="#666"/>
-    <!-- Neck -->
     <rect x="-7" y="12" width="14" height="8" rx="3" fill="#666"/>
-    <!-- Handlebar mustache -->
     <path d="M -16 2 Q -10 8 0 6 Q 10 8 16 2 Q 12 10 0 9 Q -12 10 -16 2 Z" fill="#444"/>
-    <!-- Hair hint -->
     <path d="M -14 -22 Q 0 -32 14 -22 Q 10 -26 0 -28 Q -10 -26 -14 -22 Z" fill="#555"/>
   </g>
 
-  <!-- Inner highlight -->
   <ellipse cx="82" cy="78" rx="22" ry="14" fill="#fff" opacity="0.12" transform="rotate(-25 82 78)"/>
 </svg>
