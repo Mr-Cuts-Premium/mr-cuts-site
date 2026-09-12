@@ -394,8 +394,8 @@ strong {
   scrollbar-width: thin;
 }
 
-/* Recriação das telas, não fotografia: o app ainda não rodou em aparelho.
-   Mesma paleta, mesma tipografia e os mesmos dados do cardápio real. */
+/* Recriação das telas, não fotografia. Mesma paleta, mesma tipografia
+   e os mesmos dados do cardápio real. */
 .aparelho {
   flex: none;
   width: 246px;
@@ -405,22 +405,6 @@ strong {
   padding: 10px;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
   margin: 0;
-}
-
-.aparelho-svg {
-  padding: 0;
-  overflow: hidden;
-  background: transparent;
-  border: 0;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
-}
-
-.aparelho-svg img {
-  display: block;
-  width: 246px;
-  height: auto;
-  border-radius: 30px;
-  border: 1px solid var(--linha-forte);
 }
 
 .aparelho-tela {
@@ -594,6 +578,19 @@ strong {
 
 .icone-moeda {
   flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.aparelho-moeda {
+  display: block;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 8px auto 14px;
 }
 
 .lista-produtos {

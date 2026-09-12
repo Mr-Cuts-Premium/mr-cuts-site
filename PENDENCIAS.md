@@ -37,7 +37,7 @@ grep -rn "a definir\|a confirmar" *.html
 | 11 | **Cancelamento do plano** — prazo, forma e o que acontece com o mês pago | termos §8 |
 | 12 | **Domínio** e o arquivo `CNAME` | ver `contas-e-dominio.md` no `app-mr-cuts` |
 | 13 | **GitHub Pages ligado** | repositório existe; deploy e HTTPS ainda pendentes |
-| 14 | **Captura de tela real do app** | landing — hoje SVG provisório em `assets/app/` |
+| 14 | **Captura de tela real do app** | landing — hoje recriação HTML no hero (os PNG gerados em teste Flutter saíram ilegíveis) |
 | 15 | **Foto da barbearia e da equipe** | landing, hoje sem imagem própria |
 | 16 | **Cardápio de produtos real** | landing `#produtos` — lista provisória; estoque real no app |
 | 17 | **Provedor de pagamento contratado** | app — simulador roda; Asaas (ou outro) ainda não integrado |

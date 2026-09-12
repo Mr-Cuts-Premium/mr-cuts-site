@@ -89,9 +89,10 @@ declarar, na própria página da política. Só o Bodoni Moda vem embutido, porq
 a letra do monograma; o corpo usa a pilha de fontes do sistema, e é por isso que
 a página carrega rápido. A licença OFL acompanha o arquivo, como ela exige.
 
-**As telas do app na landing são recriação em HTML, não fotografia.** O app ainda
-não rodou em aparelho. Mesma paleta, mesma letra e os preços reais do cardápio —
-mas quando houver captura de tela de verdade, é para trocar.
+**As telas do app na landing são recriação em HTML, não fotografia.** Tentativa de
+trocar por captura gerada em teste Flutter (sem as fontes da marca) saiu ilegível —
+texto virou retângulo. Os mocks HTML voltam até existir captura de aparelho boa o
+bastante. A moeda no site é o mesmo PNG do app, a arte que o dono entregou.
 
 **`.nojekyll` existe de propósito.** Sem ele o GitHub Pages roda o Jekyll e ignora
 arquivos e pastas que começam com underscore. Não usamos nenhum hoje, e é

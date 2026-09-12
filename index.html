@@ -67,31 +67,130 @@
       </div>
     </div>
 
-    <!-- Placeholders SVG em assets/app/ — trocar por capturas reais quando
-         o app rodar em aparelho. Mesma paleta e dados do cardápio. -->
+    <!-- Recriação das telas do app: mesma paleta, mesma letra, mesmo
+         cardápio. Não são fotografias — captura de aparelho entra quando
+         houver uma boa o bastante para substituir. -->
     <div>
       <div class="telas">
-        <figure class="aparelho aparelho-svg">
-          <img src="assets/app/tela-home.svg" width="246" height="520"
-               alt="Tela inicial do app: próximo atendimento, plano e moedas">
-        </figure>
-        <figure class="aparelho aparelho-svg">
-          <img src="assets/app/tela-agenda.svg" width="246" height="520"
-               alt="Tela de agendamento: serviço, profissional e horários">
-        </figure>
-        <figure class="aparelho aparelho-svg some-no-celular">
-          <img src="assets/app/tela-produtos.png" width="246" height="520"
-               alt="Tela de produtos do app"
-               onerror="this.onerror=null;this.src='assets/app/tela-produtos.svg'">
-        </figure>
-        <figure class="aparelho aparelho-svg some-no-celular">
-          <img src="assets/app/tela-moeda.png" width="246" height="520"
-               alt="Tela de moedas virtuais do app"
-               onerror="this.onerror=null;this.src='assets/app/tela-moeda.svg'">
-        </figure>
+        <div class="aparelho" aria-hidden="true">
+          <div class="aparelho-tela">
+            <div class="aparelho-corpo">
+              <img class="aparelho-marca" src="assets/marca.svg" alt="">
+              <div class="cartao-app acento">
+                <div class="rot">Próximo atendimento</div>
+                <div class="tit">Quinta, 11 de setembro</div>
+                <div class="sub">14:30 &middot; Corte e Barba</div>
+                <div class="sub">com Vandinho</div>
+              </div>
+              <div class="cartao-app">
+                <div class="rot">Seu plano</div>
+                <div class="tit">Mr. Cut's Premium</div>
+                <div class="sub">Corte e barba, todos os dias</div>
+              </div>
+              <div class="cartao-app">
+                <div class="rot">Moedas</div>
+                <div class="tit">15 moedas</div>
+                <div class="sub">Vale em serviço e produto</div>
+              </div>
+            </div>
+            <div class="aparelho-barra">
+              <span class="ativo">Início</span>
+              <span>Serviços</span>
+              <span>Horários</span>
+              <span>Perfil</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="aparelho" aria-hidden="true">
+          <div class="aparelho-tela">
+            <div class="aparelho-corpo">
+              <div class="cartao-app">
+                <div class="rot">Serviço</div>
+                <div class="tit">Corte e Barba</div>
+                <div class="sub">60 minutos</div>
+                <div class="preco">R$ 100,00</div>
+              </div>
+              <div class="cartao-app">
+                <div class="rot">Profissional</div>
+                <div class="tit">Vandinho</div>
+              </div>
+              <div class="rot" style="margin:12px 0 7px">Quinta, 11 de setembro</div>
+              <div class="grade-horas">
+                <span>13:30</span>
+                <span class="ocupada">14:00</span>
+                <span class="escolhida">14:30</span>
+                <span>15:00</span>
+                <span>15:10</span>
+                <span class="ocupada">15:40</span>
+                <span>16:00</span>
+                <span>16:30</span>
+                <span>17:00</span>
+              </div>
+            </div>
+            <div class="aparelho-barra">
+              <span>Início</span>
+              <span class="ativo">Serviços</span>
+              <span>Horários</span>
+              <span>Perfil</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="aparelho some-no-celular" aria-hidden="true">
+          <div class="aparelho-tela">
+            <div class="aparelho-corpo">
+              <div class="tit" style="margin-bottom:10px">Produtos</div>
+              <div class="cartao-app">
+                <div class="tit">Pomada Modeladora</div>
+                <div class="sub">Fixação média, brilho natural</div>
+                <div class="preco">R$ 45,00</div>
+              </div>
+              <div class="cartao-app">
+                <div class="tit">Óleo para Barba</div>
+                <div class="sub">Hidrata e perfuma</div>
+                <div class="preco">R$ 38,00</div>
+              </div>
+              <div class="cartao-app">
+                <div class="tit">Shampoo Premium</div>
+                <div class="sub">Retire no balcão</div>
+                <div class="preco">R$ 52,00</div>
+              </div>
+            </div>
+            <div class="aparelho-barra">
+              <span>Início</span>
+              <span class="ativo">Produtos</span>
+              <span>Horários</span>
+              <span>Perfil</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="aparelho some-no-celular" aria-hidden="true">
+          <div class="aparelho-tela">
+            <div class="aparelho-corpo">
+              <img class="aparelho-moeda" src="assets/moeda-virtual.png" alt="">
+              <div class="cartao-app acento">
+                <div class="rot">Suas moedas</div>
+                <div class="tit">15 moedas</div>
+                <div class="preco">R$ 15,00</div>
+                <div class="sub">Não saca · não expira · vale na casa</div>
+              </div>
+              <div class="cartao-app">
+                <div class="rot">Convide e ganhe</div>
+                <div class="sub">+ R$ 5,00 quando seu convidado for atendido</div>
+              </div>
+            </div>
+            <div class="aparelho-barra">
+              <span>Início</span>
+              <span>Serviços</span>
+              <span class="ativo">Moedas</span>
+              <span>Perfil</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <p class="legenda-tela">Telas do aplicativo MR CUT'S PREMIUM &mdash; ilustrações
-        provisórias; capturas reais substituem quando o app estiver publicado.</p>
+      <p class="legenda-tela">As telas do aplicativo MR CUT'S PREMIUM.</p>
     </div>
   </div>
 </section>
@@ -361,7 +460,7 @@
         atendimentos feitos antes de você criar a conta.</p>
       </div>
       <div class="cartao cartao-destaque">
-        <h3><img class="icone-moeda" src="assets/moeda-virtual.png" width="22" height="22" alt=""> Moeda virtual</h3>
+        <h3><img class="icone-moeda" src="assets/moeda-virtual.png" width="40" height="40" alt=""> Moeda virtual</h3>
         <p>Ganhe moedas convidando amigos, na roleta da casa ou ao comprar
         pacotes. Vale em serviço e produto &mdash; não saca, não expira. Você
         entra no programa quando quiser.</p>
