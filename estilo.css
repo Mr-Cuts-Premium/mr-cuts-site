@@ -404,6 +404,23 @@ strong {
   background: var(--noite);
   padding: 10px;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+.aparelho-svg {
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+.aparelho-svg img {
+  display: block;
+  width: 246px;
+  height: auto;
+  border-radius: 30px;
+  border: 1px solid var(--linha-forte);
 }
 
 .aparelho-tela {
@@ -563,6 +580,54 @@ strong {
 .cartao p {
   margin: 0;
   font-size: 0.92rem;
+}
+
+.cartao-destaque {
+  border-color: var(--cobre);
+}
+
+.cartao-destaque h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icone-moeda {
+  flex: none;
+}
+
+.lista-produtos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lista-produtos li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--linha);
+}
+
+.lista-produtos li:last-child {
+  border-bottom: 0;
+}
+
+.lista-produtos .nome {
+  color: var(--creme);
+}
+
+.lista-produtos .pontilhado {
+  flex: 1;
+  border-bottom: 1px dotted var(--linha-forte);
+  transform: translateY(-3px);
+}
+
+.lista-produtos .valor {
+  color: var(--cobre-claro);
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .cartao-atalho {

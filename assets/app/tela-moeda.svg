@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 246 520" width="246" height="520" role="img" aria-label="Tela de moedas do app MR CUT'S">
+  <rect width="246" height="520" rx="30" fill="#101318" stroke="#3c444f" stroke-width="1"/>
+  <rect x="10" y="10" width="226" height="460" rx="22" fill="#101318"/>
+  <circle cx="123" cy="88" r="36" fill="#c67c3e" stroke="#8f5528" stroke-width="2"/>
+  <text x="123" y="96" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#0a0c10">M</text>
+  <text x="123" y="148" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#f2f1ed">Suas moedas</text>
+  <text x="123" y="172" text-anchor="middle" font-family="sans-serif" font-size="22" fill="#db9457">R$ 15,00</text>
+  <text x="123" y="192" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#8b9099">Não saca · não expira · vale na casa</text>
+  <rect x="22" y="214" width="202" height="52" rx="12" fill="#171b22" stroke="#2a3039"/>
+  <text x="34" y="234" font-family="sans-serif" font-size="9" fill="#8b9099">Convide e ganhe</text>
+  <text x="34" y="252" font-family="sans-serif" font-size="10" fill="#c4c7cd">+ R$ 5,00 quando seu convidado for atendido</text>
+  <rect x="22" y="276" width="202" height="52" rx="12" fill="#171b22" stroke="#2a3039"/>
+  <text x="34" y="296" font-family="sans-serif" font-size="9" fill="#8b9099">Roleta da casa</text>
+  <text x="34" y="314" font-family="sans-serif" font-size="10" fill="#c4c7cd">Gire uma vez por dia</text>
+  <rect x="22" y="348" width="202" height="36" rx="10" fill="#c67c3e"/>
+  <text x="123" y="370" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="600" fill="#0a0c10">Usar moedas no pagamento</text>
+  <rect x="0" y="470" width="246" height="50" fill="#101318" stroke="#2a3039"/>
+  <text x="123" y="500" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#c67c3e">Moedas</text>
+</svg>

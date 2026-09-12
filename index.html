@@ -24,6 +24,7 @@
     <a href="#topo"><img class="marca" src="assets/marca.svg" alt="MR CUT'S PREMIUM"></a>
     <nav>
       <a class="some-no-celular" href="#servicos">Serviços</a>
+      <a class="some-no-celular" href="#produtos">Produtos</a>
       <a class="some-no-celular" href="#planos">Planos</a>
       <a class="some-no-celular" href="#app">O app</a>
       <a class="botao botao-cheio" href="#agendar">Agendar</a>
@@ -66,77 +67,31 @@
       </div>
     </div>
 
-    <!-- Recriação das telas do app: mesma paleta, mesma letra, mesmo
-         cardápio. Não são fotografias — quando o app rodar em aparelho,
-         trocar por captura de tela real. -->
+    <!-- Placeholders SVG em assets/app/ — trocar por capturas reais quando
+         o app rodar em aparelho. Mesma paleta e dados do cardápio. -->
     <div>
       <div class="telas">
-        <div class="aparelho" aria-hidden="true">
-          <div class="aparelho-tela">
-            <div class="aparelho-corpo">
-              <img class="aparelho-marca" src="assets/marca.svg" alt="">
-              <div class="cartao-app acento">
-                <div class="rot">Próximo atendimento</div>
-                <div class="tit">Quinta, 11 de setembro</div>
-                <div class="sub">14:30 &middot; Corte e Barba</div>
-                <div class="sub">com Vandinho</div>
-              </div>
-              <div class="cartao-app">
-                <div class="rot">Seu plano</div>
-                <div class="tit">Mr. Cut's Premium</div>
-                <div class="sub">Corte e barba, todos os dias</div>
-              </div>
-              <div class="cartao-app">
-                <div class="rot">Feriado a caminho</div>
-                <div class="sub">7 de setembro &mdash; assinante paga
-                  metade nos serviços fora do plano.</div>
-              </div>
-            </div>
-            <div class="aparelho-barra">
-              <span class="ativo">Início</span>
-              <span>Serviços</span>
-              <span>Horários</span>
-              <span>Perfil</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="aparelho" aria-hidden="true">
-          <div class="aparelho-tela">
-            <div class="aparelho-corpo">
-              <div class="cartao-app">
-                <div class="rot">Serviço</div>
-                <div class="tit">Corte e Barba</div>
-                <div class="sub">60 minutos</div>
-                <div class="preco">R$ 100,00</div>
-              </div>
-              <div class="cartao-app">
-                <div class="rot">Profissional</div>
-                <div class="tit">Vandinho</div>
-              </div>
-              <div class="rot" style="margin:12px 0 7px">Quinta, 11 de setembro</div>
-              <div class="grade-horas">
-                <span>13:30</span>
-                <span class="ocupada">14:00</span>
-                <span class="escolhida">14:30</span>
-                <span>15:00</span>
-                <span>15:10</span>
-                <span class="ocupada">15:40</span>
-                <span>16:00</span>
-                <span>16:30</span>
-                <span>17:00</span>
-              </div>
-            </div>
-            <div class="aparelho-barra">
-              <span>Início</span>
-              <span class="ativo">Serviços</span>
-              <span>Horários</span>
-              <span>Perfil</span>
-            </div>
-          </div>
-        </div>
+        <figure class="aparelho aparelho-svg">
+          <img src="assets/app/tela-home.svg" width="246" height="520"
+               alt="Tela inicial do app: próximo atendimento, plano e moedas">
+        </figure>
+        <figure class="aparelho aparelho-svg">
+          <img src="assets/app/tela-agenda.svg" width="246" height="520"
+               alt="Tela de agendamento: serviço, profissional e horários">
+        </figure>
+        <figure class="aparelho aparelho-svg some-no-celular">
+          <img src="assets/app/tela-produtos.png" width="246" height="520"
+               alt="Tela de produtos do app"
+               onerror="this.onerror=null;this.src='assets/app/tela-produtos.svg'">
+        </figure>
+        <figure class="aparelho aparelho-svg some-no-celular">
+          <img src="assets/app/tela-moeda.png" width="246" height="520"
+               alt="Tela de moedas virtuais do app"
+               onerror="this.onerror=null;this.src='assets/app/tela-moeda.svg'">
+        </figure>
       </div>
-      <p class="legenda-tela">As telas do aplicativo MR CUT'S PREMIUM.</p>
+      <p class="legenda-tela">Telas do aplicativo MR CUT'S PREMIUM &mdash; ilustrações
+        provisórias; capturas reais substituem quando o app estiver publicado.</p>
     </div>
   </div>
 </section>
@@ -273,6 +228,37 @@
   </div>
 </section>
 
+<!-- ============================================================ produtos -->
+<section class="faixa" id="produtos">
+  <div class="dentro">
+    <p class="secao-rotulo">Loja</p>
+    <h2>Produtos</h2>
+    <p class="chamada">
+      Pomadas, óleos e itens de cuidado masculino &mdash; disponíveis no
+      aplicativo e retirados no balcão. O cardápio completo, com estoque e
+      preço atualizado, fica no app.
+    </p>
+
+    <div class="cardapio" style="margin-top:2.5rem">
+      <div>
+        <h3>Destaques</h3>
+        <ul class="lista-produtos">
+          <li><span class="nome">Pomada Modeladora</span><span class="pontilhado"></span><span class="valor">R$ 45,00</span></li>
+          <li><span class="nome">Óleo para Barba</span><span class="pontilhado"></span><span class="valor">R$ 38,00</span></li>
+          <li><span class="nome">Shampoo Premium</span><span class="pontilhado"></span><span class="valor">R$ 52,00</span></li>
+          <li><span class="nome">Balm Hidratante</span><span class="pontilhado"></span><span class="valor">R$ 42,00</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="aviso">
+      <p><strong>Lista provisória.</strong> Preços e itens reais vêm do estoque
+      da casa &mdash; consulte o aplicativo para o cardápio atualizado. Moedas
+      virtuais também valem em produto.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ============================================================== planos -->
 <section class="faixa" id="planos">
   <div class="dentro">
@@ -374,10 +360,32 @@
         <p>O que você fez, quando, com quem e quanto pagou. Inclusive dos
         atendimentos feitos antes de você criar a conta.</p>
       </div>
+      <div class="cartao cartao-destaque">
+        <h3><img class="icone-moeda" src="assets/moeda-virtual.svg" width="22" height="22" alt=""> Moeda virtual</h3>
+        <p>Ganhe moedas convidando amigos, na roleta da casa ou ao comprar
+        pacotes. Vale em serviço e produto &mdash; não saca, não expira. Você
+        entra no programa quando quiser.</p>
+      </div>
       <div class="cartao">
-        <h3>Pagamento na loja</h3>
-        <p>O app não cobra nada e não guarda cartão. Todo pagamento é
-        presencial, no balcão da barbearia.</p>
+        <h3>Produtos</h3>
+        <p>Veja o que tem na prateleira, monte o pedido e retire no balcão.
+        Assinante Premium leva desconto em produto, como na loja.</p>
+      </div>
+      <div class="cartao">
+        <h3>Pacotes</h3>
+        <p>Monte o seu: cinco cortes, dois alisamentos &mdash; o desconto
+        aparece enquanto você monta. Paga no balcão ou, em breve, no app.</p>
+      </div>
+      <div class="cartao">
+        <h3>Convide e ganhe</h3>
+        <p>Compartilhe seu link. Quando o convidado for atendido, os dois
+        ganham moedas &mdash; valor e prazo definidos pela casa.</p>
+      </div>
+      <div class="cartao">
+        <h3>Pagamento no app</h3>
+        <p>Hoje o pagamento é no balcão. <strong>Pagamento pelo aplicativo
+        chega em breve</strong> &mdash; Pix e cartão, com moedas abatendo o
+        total. Enquanto isso, o checkout simulado roda só em teste interno.</p>
       </div>
       <div class="cartao">
         <h3>Sua conta é sua</h3>
@@ -395,18 +403,27 @@
     <h2>Quem te atende</h2>
 
     <div class="grade" style="margin-top:2rem">
-      <div class="cartao">
-        <h3>Vandinho</h3>
-        <p>Ewandro, dono da casa &mdash; e continua atendendo em cadeira.</p>
-      </div>
-      <div class="cartao">
-        <h3>Felipe</h3>
-        <p>Corte, barba e química.</p>
-      </div>
-      <div class="cartao">
-        <h3>Breno</h3>
-        <p>Corte, barba e química.</p>
-      </div>
+      <!-- PENDENTE: trocar app.html?barbeiro=SLUG pelo URL do Flutter web
+           (ex.: /barbeiro/vandinho) quando o deploy estiver no ar. -->
+      <a class="cartao cartao-atalho" href="app.html?barbeiro=vandinho"
+         data-slug="vandinho">
+        <span class="titulo">Vandinho</span>
+        <span class="desc">Ewandro, dono da casa &mdash; e continua atendendo
+          em cadeira.</span>
+        <span class="seta">Ver agenda &rarr;</span>
+      </a>
+      <a class="cartao cartao-atalho" href="app.html?barbeiro=felipe"
+         data-slug="felipe">
+        <span class="titulo">Felipe</span>
+        <span class="desc">Corte, barba e química.</span>
+        <span class="seta">Ver agenda &rarr;</span>
+      </a>
+      <a class="cartao cartao-atalho" href="app.html?barbeiro=breno"
+         data-slug="breno">
+        <span class="titulo">Breno</span>
+        <span class="desc">Corte, barba e química.</span>
+        <span class="seta">Ver agenda &rarr;</span>
+      </a>
       <div class="cartao">
         <h3>Eliane</h3>
         <p>Recepção. É quem atende no balcão e organiza a agenda do dia.</p>
@@ -432,6 +449,7 @@
       <h4>A barbearia</h4>
       <ul>
         <li><a href="#servicos">Serviços e preços</a></li>
+        <li><a href="#produtos">Produtos</a></li>
         <li><a href="#planos">Planos mensais</a></li>
         <li><a href="#equipe">Equipe</a></li>
         <li><a href="#agendar">Marcar horário</a></li>
