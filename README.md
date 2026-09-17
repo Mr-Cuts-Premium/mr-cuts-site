@@ -24,7 +24,7 @@ pago. Além do custo, há três razões que valem por si:
 
 | Arquivo | O que é |
 |---|---|
-| `index.html` | Landing da barbearia: cardápio, planos, equipe, demonstração do app e atalhos para marcar |
+| `index.html` | Landing da barbearia: cardápio, combos, pacotes, vantagens do app, equipe e atalhos para marcar |
 | `politica-de-privacidade.html` | Exigida pelas duas lojas |
 | `termos-de-uso.html` | Regras de agendamento, cancelamento, faltas e planos |
 | `exclusao-de-conta.html` | Exigida pelo Google Play, **além** do botão dentro do app |
@@ -44,23 +44,33 @@ python -m http.server 8000
 
 E abrir <http://localhost:8000>.
 
-## Sincronizar o cardápio com o app
+## Sincronizar a vitrine com o app
 
-O cardápio tem fallback estático no `index.html`. Na carga da página, o
-`cardapio.js` consulta somente os serviços ativos pela API REST do Supabase e
-monta de novo a grade (inclui serviço novo, remove o que saiu do ar e
-atualiza preço/duração). Se a consulta falhar, o HTML original permanece na
-tela. A chave usada no navegador deve ser a chave pública `anon`, protegida
+Serviços, combos, pacotes, produtos, VIP, convite e aniversário têm
+fallback estático no `index.html`. Na carga da página, o `cardapio.js`
+consulta a API REST do Supabase e monta de novo cada seção. Se a consulta
+falhar, o HTML original permanece na tela. Se o dono desligar uma regra
+(pacote sem faixa, aniversário em zero, nenhum VIP), a seção some.
+
+A chave usada no navegador deve ser a chave pública `anon`, protegida
 pelas políticas de leitura da tabela no Supabase.
 
-Preencha `cardapio-config.js` com a URL pública do projeto, a chave `anon` e
-os nomes reais das colunas usadas pelo app. O padrão já contempla
-`servicos`, `nome`, `categoria`, `duracao_min`, `preco_centavos`,
-`preco_a_partir_de`, `ativo` e `ordem`. O preço é armazenado em centavos e o
-site divide por 100 antes de exibi-lo.
+Preencha `cardapio-config.js` com a URL pública do projeto e a chave
+`anon`. O padrão já contempla:
 
-Para atualizar a linha de base estática antes de publicar, use Node 18 ou mais
-recente e defina as mesmas informações no ambiente. No PowerShell:
+- `servicos` — cardápio (VIP sai da lista comum e ganha seção própria;
+  combo ganha etiqueta e seção com as partes)
+- `combo_itens` — o que entra em cada combo, e a economia em relação à soma
+- `regras_pacote` — faixas de desconto do pacote
+- `produtos` — itens à venda
+- `barbearia` — desconto de convite, moedas de indicação, aniversário e
+  prazos da casa
+
+O preço é armazenado em centavos e o site divide por 100 antes de
+exibi-lo.
+
+Para atualizar a linha de base estática antes de publicar, use Node 18 ou
+mais recente e defina as mesmas informações no ambiente. No PowerShell:
 
 ```powershell
 $env:SUPABASE_URL = 'https://seu-projeto.supabase.co'
@@ -71,10 +81,11 @@ node gerar-cardapio.js
 O gerador usa `SUPABASE_PRICE_DIVISOR=100` por padrão, como o app. Altere essa
 variável somente se o banco passar a armazenar preços em reais.
 
-O script reescreve somente o trecho entre `CARDAPIO:inicio` e
-`CARDAPIO:fim`. Ele é uma conveniência para manter o fallback atualizado; a
-sincronização em tempo real do `cardapio.js` continua sendo a garantia contra
-preços antigos.
+O script reescreve os trechos entre os marcadores `CARDAPIO`, `COMBOS`,
+`PACOTES`, `PRODUTOS` e `VIP`, e atualiza os números de convite,
+aniversário, cancelamento e intervalo. É uma conveniência para manter o
+fallback atualizado; a sincronização em tempo real do `cardapio.js`
+continua sendo a garantia contra preços antigos.
 
 ## Decisões que não são acidente
 

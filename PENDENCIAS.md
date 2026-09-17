@@ -39,7 +39,7 @@ grep -rn "a definir\|a confirmar" *.html
 | 13 | **GitHub Pages ligado** | repositório existe; deploy e HTTPS ainda pendentes |
 | 14 | **Captura de tela real do app** | landing — hoje recriação HTML no hero (os PNG gerados em teste Flutter saíram ilegíveis) |
 | 15 | **Foto da barbearia e da equipe** | landing, hoje sem imagem própria |
-| 16 | **Cardápio de produtos real** | landing `#produtos` — lista provisória; estoque real no app |
+| 16 | **Cardápio de produtos real** | landing `#produtos` — agora lê o estoque à venda no banco; se a API falhar, fica o fallback estático |
 | 17 | **Provedor de pagamento contratado** | app — simulador roda; Asaas (ou outro) ainda não integrado |
 
 ---
@@ -50,8 +50,11 @@ Para ninguém sair conferindo o que já foi conferido. Tudo abaixo saiu de
 `supabase/seed.sql`, `design/tokens.json` e `docs/regras-de-negocio.md` do
 `app-mr-cuts` — não de suposição:
 
-- Os 24 serviços, com preço e duração, e quais saem "a partir de"
-- Os 6 planos, com preço e os dias em que cada um vale
+- Os serviços ativos, com preço e duração, e quais saem "a partir de"
+- Combos com as partes e a economia em relação à soma
+- As faixas de desconto dos pacotes
+- Convite (desconto do convidado e moedas), aniversário e atendimento VIP
+- Produtos à venda no balcão
 - A equipe: Vandinho (dono, atende), Felipe, Breno, e Eliane na recepção
 - Slugs dos barbeiros: `vandinho`, `felipe`, `breno` (links placeholder na equipe)
 - Endereço: Av. Miguel Perrela, 987 — Lj 18, Castelo, Belo Horizonte — MG, 31330-290

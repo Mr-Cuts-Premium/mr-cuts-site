@@ -24,21 +24,29 @@
     <a href="#topo"><img class="marca" src="assets/marca.svg" alt="MR CUT'S PREMIUM"></a>
     <nav>
       <a class="some-no-celular" href="#servicos">Serviços</a>
-      <a class="some-no-celular" href="#produtos">Produtos</a>
-      <a class="some-no-celular" href="#planos">Planos</a>
+      <a class="some-no-celular" href="#pacotes">Pacotes</a>
+      <a class="some-no-celular" href="#convite">Vantagens</a>
       <a class="some-no-celular" href="#app">O app</a>
-      <a class="botao botao-cheio" href="#agendar">Agendar</a>
+      <a class="some-no-celular" href="#equipe">A casa</a>
+      <a class="botao botao-cheio" href="#agendar">Agendar horário</a>
     </nav>
   </div>
 </header>
 
 <main id="topo">
 
+<aside class="faixa-aviso" aria-label="Aviso operacional">
+  <p>
+    <span class="faixa-aviso-ico" aria-hidden="true"></span>
+    Intervalo de <span data-intervalo-min>10</span> min na agenda &middot; Belo Horizonte, MG
+  </p>
+</aside>
+
 <!-- ================================================================ hero -->
 <section class="hero">
   <div class="hero-grade">
-    <div>
-      <span class="selo">Belo Horizonte &middot; MG</span>
+    <div class="hero-texto">
+      <span class="selo"><span class="selo-ponto" aria-hidden="true"></span> Belo Horizonte &middot; MG</span>
       <h1>A sua cadeira,<br>na hora que você marcar.</h1>
       <p class="chamada">
         Corte, barba e química em hora marcada. Você escolhe o serviço, o
@@ -48,149 +56,51 @@
 
       <div class="botoes">
         <a class="botao botao-cheio" href="#agendar">Marcar horário</a>
-        <a class="botao botao-vazado" href="#servicos">Ver preços</a>
+        <a class="botao botao-vazado" href="#pacotes">Ver pacotes</a>
       </div>
 
       <div class="hero-dados">
         <div class="hero-dado">
-          <span class="n">24</span>
+          <span class="n" id="hero-n-servicos">24</span>
           <span class="r">serviços no cardápio</span>
+        </div>
+        <div class="hero-dado hero-dado-destaque">
+          <span class="n"><span data-intervalo-min>10</span> min</span>
+          <span class="r">de intervalo na agenda</span>
         </div>
         <div class="hero-dado">
           <span class="n">Seg&ndash;Sex</span>
           <span class="r">8h–20h · sáb até 18h</span>
         </div>
-        <div class="hero-dado">
-          <span class="n">10 min</span>
-          <span class="r">de intervalo na agenda</span>
-        </div>
       </div>
     </div>
 
-    <!-- Recriação das telas do app: mesma paleta, mesma letra, mesmo
-         cardápio. Não são fotografias — captura de aparelho entra quando
-         houver uma boa o bastante para substituir. -->
-    <div>
-      <div class="telas">
-        <div class="aparelho" aria-hidden="true">
-          <div class="aparelho-tela">
-            <div class="aparelho-corpo">
-              <img class="aparelho-marca" src="assets/marca.svg" alt="">
-              <div class="cartao-app acento">
-                <div class="rot">Próximo atendimento</div>
-                <div class="tit">Quinta, 11 de setembro</div>
-                <div class="sub">14:30 &middot; Corte e Barba</div>
-                <div class="sub">com Vandinho</div>
-              </div>
-              <div class="cartao-app">
-                <div class="rot">Seu plano</div>
-                <div class="tit">Mr. Cut's Premium</div>
-                <div class="sub">Corte e barba, todos os dias</div>
-              </div>
-              <div class="cartao-app">
-                <div class="rot">Moedas</div>
-                <div class="tit">15 moedas</div>
-                <div class="sub">Vale em serviço e produto</div>
-              </div>
-            </div>
-            <div class="aparelho-barra">
-              <span class="ativo">Início</span>
-              <span>Serviços</span>
-              <span>Horários</span>
-              <span>Perfil</span>
-            </div>
-          </div>
+    <div class="hero-lado">
+      <div class="hero-promo hero-promo-moeda">
+        <div class="hero-promo-icone">
+          <img src="assets/moeda-virtual.png" width="72" height="72" alt="">
         </div>
-
-        <div class="aparelho" aria-hidden="true">
-          <div class="aparelho-tela">
-            <div class="aparelho-corpo">
-              <div class="cartao-app">
-                <div class="rot">Serviço</div>
-                <div class="tit">Corte e Barba</div>
-                <div class="sub">60 minutos</div>
-                <div class="preco">R$ 100,00</div>
-              </div>
-              <div class="cartao-app">
-                <div class="rot">Profissional</div>
-                <div class="tit">Vandinho</div>
-              </div>
-              <div class="rot" style="margin:12px 0 7px">Quinta, 11 de setembro</div>
-              <div class="grade-horas">
-                <span>13:30</span>
-                <span class="ocupada">14:00</span>
-                <span class="escolhida">14:30</span>
-                <span>15:00</span>
-                <span>15:10</span>
-                <span class="ocupada">15:40</span>
-                <span>16:00</span>
-                <span>16:30</span>
-                <span>17:00</span>
-              </div>
-            </div>
-            <div class="aparelho-barra">
-              <span>Início</span>
-              <span class="ativo">Serviços</span>
-              <span>Horários</span>
-              <span>Perfil</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="aparelho some-no-celular" aria-hidden="true">
-          <div class="aparelho-tela">
-            <div class="aparelho-corpo">
-              <div class="tit" style="margin-bottom:10px">Produtos</div>
-              <div class="cartao-app">
-                <div class="tit">Pomada Modeladora</div>
-                <div class="sub">Fixação média, brilho natural</div>
-                <div class="preco">R$ 45,00</div>
-              </div>
-              <div class="cartao-app">
-                <div class="tit">Óleo para Barba</div>
-                <div class="sub">Hidrata e perfuma</div>
-                <div class="preco">R$ 38,00</div>
-              </div>
-              <div class="cartao-app">
-                <div class="tit">Shampoo Premium</div>
-                <div class="sub">Retire no balcão</div>
-                <div class="preco">R$ 52,00</div>
-              </div>
-            </div>
-            <div class="aparelho-barra">
-              <span>Início</span>
-              <span class="ativo">Produtos</span>
-              <span>Horários</span>
-              <span>Perfil</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="aparelho some-no-celular" aria-hidden="true">
-          <div class="aparelho-tela">
-            <div class="aparelho-corpo">
-              <img class="aparelho-moeda" src="assets/moeda-virtual.png" alt="">
-              <div class="cartao-app acento">
-                <div class="rot">Suas moedas</div>
-                <div class="tit">15 moedas</div>
-                <div class="preco">R$ 15,00</div>
-                <div class="sub">Não saca · não expira · vale na casa</div>
-              </div>
-              <div class="cartao-app">
-                <div class="rot">Convide e ganhe</div>
-                <div class="sub">+ R$ 5,00 quando seu convidado for atendido</div>
-              </div>
-            </div>
-            <div class="aparelho-barra">
-              <span>Início</span>
-              <span>Serviços</span>
-              <span class="ativo">Moedas</span>
-              <span>Perfil</span>
-            </div>
-          </div>
+        <div class="hero-promo-corpo">
+          <span class="hero-promo-rotulo">Vantagem do app</span>
+          <h3>Moeda virtual &amp; benefícios</h3>
+          <p>
+            Ganhe moedas convidando amigos, na roleta da casa ou ao comprar
+            pacotes. Vale em serviço e produto &mdash; não saca, não expira.
+          </p>
         </div>
       </div>
-      <p class="legenda-tela">As telas do aplicativo MR CUT'S PREMIUM.</p>
+
+      <div class="hero-promo">
+        <div class="hero-promo-corpo">
+          <span class="hero-promo-rotulo">Convide e ganhe</span>
+          <h3>Desconto para quem você indicar</h3>
+          <p>
+            Seu amigo ganha desconto na primeira visita, e os dois recebem
+            moedas na carteira. O código sai do aplicativo.
+          </p>
+          <a class="hero-promo-link" href="#convite">Como funciona &rarr;</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -256,7 +166,7 @@
     <div class="aviso">
       <p><strong>Cancelou? Sem problema &mdash; avise com antecedência.</strong>
       O horário pode ser cancelado pelo site ou pelo aplicativo até
-      <strong>3 horas</strong> antes do atendimento. Depois disso a cadeira já
+      <strong><span data-cancelamento-horas>3</span> horas</strong> antes do atendimento. Depois disso a cadeira já
       ficou reservada e a casa cobra pela falta. A regra atual aparece sempre
       na hora de cancelar.</p>
     </div>
@@ -266,35 +176,43 @@
 <!-- ============================================================ serviços -->
 <section class="faixa" id="servicos">
   <div class="dentro">
-    <p class="secao-rotulo">Cardápio</p>
-    <h2>Serviços e preços</h2>
-    <p class="chamada">
-      Os valores abaixo são os praticados na casa. Serviços de química saem
-      <strong>a partir de</strong> &mdash; o valor final depende do comprimento
-      do cabelo e é acertado no balcão.
-    </p>
+    <div class="secao-cabeca">
+      <div>
+        <p class="secao-rotulo">Tabela de precisão</p>
+        <h2>Cardápio de serviços</h2>
+      </div>
+      <p class="chamada secao-cabeca-texto">
+        Os valores abaixo são os praticados na casa. Serviços de química saem
+        <strong>a partir de</strong> &mdash; o valor final depende do comprimento
+        do cabelo e é acertado no balcão.
+      </p>
+    </div>
 
     <p id="cardapio-status" class="cardapio-status" aria-live="polite" hidden></p>
 
     <!-- CARDAPIO:inicio -->
-    <div class="cardapio" style="margin-top:2.5rem">
-      <div>
-        <h3>Corte</h3>
+    <div class="cardapio" style="margin-top:2rem">
+      <div class="cardapio-cat" data-categoria="corte">
+        <div class="cardapio-cat-cabeca">
+          <h3><span class="cardapio-ico" aria-hidden="true"></span> Corte</h3>
+        </div>
         <ul>
-          <li data-servico="corte"><span class="nome">Corte</span><span class="pontilhado"></span><span class="dur">30 min</span><span class="valor">R$ 65,00</span></li>
-          <li data-servico="corte-e-barba"><span class="nome">Corte e Barba</span><span class="pontilhado"></span><span class="dur">60 min</span><span class="valor">R$ 100,00</span></li>
-          <li data-servico="corte-e-barboterapia"><span class="nome">Corte e Barboterapia</span><span class="pontilhado"></span><span class="dur">60 min</span><span class="valor">R$ 110,00</span></li>
-          <li data-servico="corte-e-sobrancelha"><span class="nome">Corte e sobrancelha</span><span class="pontilhado"></span><span class="dur">45 min</span><span class="valor">R$ 70,00</span></li>
+          <li data-servico="corte"><span class="nome">Corte</span><span class="pontilhado"></span><span class="dur">30 min</span><span class="valor">R$ 60,00</span></li>
+          <li data-servico="corte-e-barba" data-combo="true"><span class="nome">Corte e Barba <span class="tag-combo">Combo</span></span><span class="pontilhado"></span><span class="dur">60 min</span><span class="valor">R$ 100,00</span></li>
+          <li data-servico="corte-e-barboterapia" data-combo="true"><span class="nome">Corte e Barboterapia <span class="tag-combo">Combo</span></span><span class="pontilhado"></span><span class="dur">60 min</span><span class="valor">R$ 110,00</span></li>
+          <li data-servico="corte-e-sobrancelha" data-combo="true"><span class="nome">Corte e sobrancelha <span class="tag-combo">Combo</span></span><span class="pontilhado"></span><span class="dur">45 min</span><span class="valor">R$ 70,00</span></li>
           <li data-servico="corte-infantil"><span class="nome">Corte infantil</span><span class="pontilhado"></span><span class="dur">45 min</span><span class="valor">R$ 60,00</span></li>
-          <li data-servico="corte-barba-e-sobrancelha"><span class="nome">Corte, Barba e Sobrancelha</span><span class="pontilhado"></span><span class="dur">60 min</span><span class="valor">R$ 115,00</span></li>
+          <li data-servico="corte-barba-e-sobrancelha" data-combo="true"><span class="nome">Corte, Barba e Sobrancelha <span class="tag-combo">Combo</span></span><span class="pontilhado"></span><span class="dur">60 min</span><span class="valor">R$ 115,00</span></li>
           <li data-servico="nudred"><span class="nome">Nudred</span><span class="pontilhado"></span><span class="dur">30 min</span><span class="valor">R$ 30,00</span></li>
           <li data-servico="pezinho"><span class="nome">Pezinho</span><span class="pontilhado"></span><span class="dur">15 min</span><span class="valor">R$ 30,00</span></li>
           <li data-servico="raspagem"><span class="nome">Raspagem</span><span class="pontilhado"></span><span class="dur">30 min</span><span class="valor">R$ 40,00</span></li>
         </ul>
       </div>
 
-      <div>
-        <h3>Barba</h3>
+      <div class="cardapio-cat" data-categoria="barba">
+        <div class="cardapio-cat-cabeca">
+          <h3><span class="cardapio-ico" aria-hidden="true"></span> Barba</h3>
+        </div>
         <ul>
           <li data-servico="barba-e-pezinho"><span class="nome">Barba e pezinho</span><span class="pontilhado"></span><span class="dur">45 min</span><span class="valor">R$ 65,00</span></li>
           <li data-servico="barba-e-raspagem"><span class="nome">Barba e Raspagem</span><span class="pontilhado"></span><span class="dur">45 min</span><span class="valor">R$ 70,00</span></li>
@@ -302,7 +220,12 @@
           <li data-servico="barboterapia"><span class="nome">Barboterapia</span><span class="pontilhado"></span><span class="dur">30 min</span><span class="valor">R$ 60,00</span></li>
           <li data-servico="bigode"><span class="nome">Bigode</span><span class="pontilhado"></span><span class="dur">15 min</span><span class="valor">R$ 15,00</span></li>
         </ul>
-        <h3 style="margin-top:2rem">Estética</h3>
+      </div>
+
+      <div class="cardapio-cat" data-categoria="estetica">
+        <div class="cardapio-cat-cabeca">
+          <h3><span class="cardapio-ico" aria-hidden="true"></span> Estética</h3>
+        </div>
         <ul>
           <li data-servico="depilacao-do-ouvido"><span class="nome">Depilação do Ouvido</span><span class="pontilhado"></span><span class="dur">15 min</span><span class="valor">R$ 20,00</span></li>
           <li data-servico="depilacao-nasal"><span class="nome">Depilação Nasal</span><span class="pontilhado"></span><span class="dur">15 min</span><span class="valor">R$ 20,00</span></li>
@@ -311,8 +234,11 @@
         </ul>
       </div>
 
-      <div>
-        <h3>Química</h3>
+      <div class="cardapio-cat" data-categoria="quimica">
+        <div class="cardapio-cat-cabeca">
+          <h3><span class="cardapio-ico" aria-hidden="true"></span> Química</h3>
+          <span class="cardapio-cat-tag">A partir de</span>
+        </div>
         <ul>
           <li data-servico="alisamento"><span class="nome">Alisamento</span><span class="pontilhado"></span><span class="dur">30 min</span><span class="valor">a partir de R$ 50,00</span></li>
           <li data-servico="hidratacao"><span class="nome">Hidratação</span><span class="pontilhado"></span><span class="dur">15 min</span><span class="valor">a partir de R$ 40,00</span></li>
@@ -327,6 +253,67 @@
   </div>
 </section>
 
+<!-- ============================================================== combos -->
+<section class="faixa" id="combos">
+  <div class="dentro">
+    <div class="secao-cabeca">
+      <div>
+        <p class="secao-rotulo">Juntos saem menos</p>
+        <h2>Combos</h2>
+      </div>
+      <p class="chamada secao-cabeca-texto">
+        O preço fechado do combo, não a soma das partes. Marcar separado ou
+        pelo atalho dá o mesmo valor &mdash; a casa reconhece a combinação.
+      </p>
+    </div>
+
+    <!-- COMBOS:inicio -->
+    <div class="grade-ofertas" id="combos-lista">
+      <div class="cartao oferta destaque" data-combo="corte-e-barba">
+        <span class="oferta-rotulo">Combo</span>
+        <h3>Corte e Barba</h3>
+        <div class="preco">R$ 100,00</div>
+        <ul>
+          <li>Barba Express + Corte</li>
+          <li>60 min</li>
+          <li>Economize R$ 15,00 em relação às partes</li>
+        </ul>
+      </div>
+      <div class="cartao oferta destaque" data-combo="corte-e-barboterapia">
+        <span class="oferta-rotulo">Combo</span>
+        <h3>Corte e Barboterapia</h3>
+        <div class="preco">R$ 110,00</div>
+        <ul>
+          <li>Barboterapia + Corte</li>
+          <li>60 min</li>
+          <li>Economize R$ 10,00 em relação às partes</li>
+        </ul>
+      </div>
+      <div class="cartao oferta destaque" data-combo="corte-e-sobrancelha">
+        <span class="oferta-rotulo">Combo</span>
+        <h3>Corte e sobrancelha</h3>
+        <div class="preco">R$ 70,00</div>
+        <ul>
+          <li>Corte + Sobrancelha</li>
+          <li>45 min</li>
+          <li>Economize R$ 20,00 em relação às partes</li>
+        </ul>
+      </div>
+      <div class="cartao oferta destaque" data-combo="corte-barba-e-sobrancelha">
+        <span class="oferta-rotulo">Combo</span>
+        <h3>Corte, Barba e Sobrancelha</h3>
+        <div class="preco">R$ 115,00</div>
+        <ul>
+          <li>Barba Express + Corte + Sobrancelha</li>
+          <li>60 min</li>
+          <li>Economize R$ 30,00 em relação às partes</li>
+        </ul>
+      </div>
+    </div>
+    <!-- COMBOS:fim -->
+  </div>
+</section>
+
 <!-- ============================================================ produtos -->
 <section class="faixa" id="produtos">
   <div class="dentro">
@@ -334,163 +321,225 @@
     <h2>Produtos</h2>
     <p class="chamada">
       Pomadas, óleos e itens de cuidado masculino &mdash; disponíveis no
-      aplicativo e retirados no balcão. O cardápio completo, com estoque e
-      preço atualizado, fica no app.
+      aplicativo e retirados no balcão. Moedas virtuais também valem em produto.
     </p>
 
-    <div class="cardapio" style="margin-top:2.5rem">
-      <div>
-        <h3>Destaques</h3>
+    <div class="cardapio cardapio-produtos" style="margin-top:2rem">
+      <div class="cardapio-cat" data-categoria="produtos">
+        <div class="cardapio-cat-cabeca">
+          <h3><span class="cardapio-ico" aria-hidden="true"></span> Destaques</h3>
+        </div>
+        <!-- PRODUTOS:inicio -->
         <ul class="lista-produtos">
-          <li><span class="nome">Pomada Modeladora</span><span class="pontilhado"></span><span class="valor">R$ 45,00</span></li>
-          <li><span class="nome">Óleo para Barba</span><span class="pontilhado"></span><span class="valor">R$ 38,00</span></li>
-          <li><span class="nome">Shampoo Premium</span><span class="pontilhado"></span><span class="valor">R$ 52,00</span></li>
-          <li><span class="nome">Balm Hidratante</span><span class="pontilhado"></span><span class="valor">R$ 42,00</span></li>
+          <li><span class="nome">Pomada modeladora</span><span class="pontilhado"></span><span class="valor">R$ 45,00</span></li>
+          <li><span class="nome">Pomada efeito matte</span><span class="pontilhado"></span><span class="valor">R$ 49,00</span></li>
+          <li><span class="nome">Shampoo antiqueda</span><span class="pontilhado"></span><span class="valor">R$ 59,00</span></li>
+          <li><span class="nome">Óleo para barba</span><span class="pontilhado"></span><span class="valor">R$ 39,00</span></li>
         </ul>
+    <!-- PRODUTOS:fim -->
       </div>
     </div>
 
-    <div class="aviso">
+    <div class="aviso" id="produtos-aviso" hidden>
       <p><strong>Lista provisória.</strong> Preços e itens reais vêm do estoque
-      da casa &mdash; consulte o aplicativo para o cardápio atualizado. Moedas
-      virtuais também valem em produto.</p>
+      da casa &mdash; consulte o aplicativo para o cardápio atualizado.</p>
     </div>
   </div>
 </section>
 
-<!-- ============================================================== planos -->
-<section class="faixa" id="planos">
+<!-- ============================================================= pacotes -->
+<section class="faixa faixa-abismo" id="pacotes">
   <div class="dentro">
-    <p class="secao-rotulo">Assinatura</p>
-    <h2>Planos mensais</h2>
-    <p class="chamada">
-      Quem vem sempre paga menos. A diferença entre <strong>Basic</strong> e
-      <strong>Premium</strong> é o dia: o Basic vale de segunda a quarta, o
-      Premium vale todo dia em que a casa abre.
-    </p>
+    <div class="secao-cabeca">
+      <div>
+        <p class="secao-rotulo">Compra adiantada</p>
+        <h2>Pacotes</h2>
+      </div>
+      <p class="chamada secao-cabeca-texto">
+        Você monta o pacote no aplicativo: cinco cortes, dois alisamentos, o
+        que quiser. O desconto aparece enquanto monta. Paga no balcão, e o
+        crédito <strong>não vence</strong>.
+      </p>
+    </div>
 
-    <div class="grade" style="margin-top:2.5rem">
-      <div class="cartao plano">
-        <h3>Basic &middot; Corte</h3>
-        <div class="preco">R$ 99,90<span class="mes"> /mês</span></div>
-        <ul>
-          <li>Corte incluso</li>
-          <li>Segunda a quarta</li>
-        </ul>
-      </div>
-      <div class="cartao plano">
-        <h3>Basic &middot; Barba</h3>
-        <div class="preco">R$ 119,90<span class="mes"> /mês</span></div>
-        <ul>
-          <li>Barba inclusa</li>
-          <li>Segunda a quarta</li>
-        </ul>
-      </div>
-      <div class="cartao plano">
-        <h3>Basic &middot; Corte e Barba</h3>
-        <div class="preco">R$ 209,90<span class="mes"> /mês</span></div>
-        <ul>
-          <li>Corte e barba inclusos</li>
-          <li>Segunda a quarta</li>
-        </ul>
-      </div>
-      <div class="cartao plano destaque">
-        <h3>Premium &middot; Corte</h3>
-        <div class="preco">R$ 129,90<span class="mes"> /mês</span></div>
-        <ul>
-          <li>Corte incluso</li>
-          <li>Todos os dias de atendimento</li>
-          <li>10% nos serviços de química</li>
-        </ul>
-      </div>
-      <div class="cartao plano destaque">
-        <h3>Premium &middot; Barba</h3>
-        <div class="preco">R$ 139,90<span class="mes"> /mês</span></div>
-        <ul>
-          <li>Barba inclusa</li>
-          <li>Todos os dias de atendimento</li>
-          <li>10% nos serviços de química</li>
-        </ul>
-      </div>
-      <div class="cartao plano destaque">
-        <h3>Premium &middot; Corte e Barba</h3>
-        <div class="preco">R$ 239,90<span class="mes"> /mês</span></div>
-        <ul>
-          <li>Corte e barba inclusos</li>
-          <li>Todos os dias de atendimento</li>
-          <li>10% nos serviços de química</li>
-        </ul>
+    <!-- PACOTES:inicio -->
+    <div id="pacotes-lista">
+      <div class="cardapio cardapio-produtos" style="margin-top:2rem">
+        <div class="cardapio-cat" data-categoria="pacotes">
+          <div class="cardapio-cat-cabeca">
+            <h3><span class="cardapio-ico" aria-hidden="true"></span> Faixas de desconto</h3>
+          </div>
+          <ul>
+          <li data-pacote="a-partir-de-4-produtos-ganhe-10-de-desconto"><span class="nome">A partir de 4 produtos ganhe 10% de desconto</span><span class="pontilhado"></span><span class="dur">4 serviços</span><span class="valor">10% de desconto</span></li>
+          <li data-pacote="a-partir-de-6-produtos-12-de-desconto"><span class="nome">A partir de 6 produtos 12% de desconto</span><span class="pontilhado"></span><span class="dur">6 serviços</span><span class="valor">12% de desconto</span></li>
+          </ul>
+        </div>
       </div>
     </div>
+    <!-- PACOTES:fim -->
 
     <div class="aviso">
-      <p><strong>Feriado e véspera:</strong> nesses dias o plano não cobre o
-      atendimento, mas o assinante paga <strong>metade</strong> do valor. O
-      aplicativo avisa antes de você confirmar, com o preço já recalculado
-      &mdash; nada de descobrir no balcão.</p>
+      <p><strong>Vence a maior faixa, e elas não somam.</strong> Se o seu
+      pacote encaixa em duas regras, a casa aplica só o maior desconto
+      &mdash; a mesma lógica do resto do cardápio.</p>
     </div>
+  </div>
+</section>
+
+<!-- ============================================================= convite -->
+<section class="faixa" id="convite">
+  <div class="dentro">
+    <div class="secao-cabeca">
+      <div>
+        <p class="secao-rotulo">Indicação</p>
+        <h2>Convide e ganhe</h2>
+      </div>
+      <p class="chamada secao-cabeca-texto">
+        Cada cliente tem um código no aplicativo. Quem chega com ele ganha
+        desconto na primeira visita, e os dois recebem moedas.
+      </p>
+    </div>
+
+    <div class="grade-ofertas" style="margin-top:2.5rem">
+      <div class="cartao oferta destaque" id="convite-desconto-bloco">
+        <span class="oferta-rotulo">Quem você convidar</span>
+        <h3>Desconto na primeira visita</h3>
+        <div class="preco"><span id="convite-desconto">15%</span></div>
+        <ul>
+          <li>Vale no primeiro atendimento de quem usou o seu código</li>
+        </ul>
+      </div>
+      <div class="cartao oferta" id="convite-moeda-bloco">
+        <span class="oferta-rotulo">Os dois ganham</span>
+        <h3>Moedas na carteira</h3>
+        <div class="preco"><span id="convite-moeda">R$ 5,00</span></div>
+        <ul>
+          <li>Você e o convidado recebem o mesmo valor</li>
+          <li><span id="convite-validade">As moedas não expiram.</span></li>
+          <li>Vale em serviço e em produto</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================= aniversário -->
+<section class="faixa" id="aniversario">
+  <div class="dentro">
+    <div class="secao-cabeca">
+      <div>
+        <p class="secao-rotulo">No seu dia</p>
+        <h2>Desconto de aniversário</h2>
+      </div>
+      <p class="chamada secao-cabeca-texto">
+        Cadastre a data no aplicativo. No dia, o desconto entra sozinho no
+        preço &mdash; antes de confirmar o horário.
+      </p>
+    </div>
+
+    <div class="grade-ofertas" style="margin-top:2.5rem">
+      <div class="cartao oferta destaque" id="aniversario-desconto-bloco">
+        <span class="oferta-rotulo">Aniversariante</span>
+        <h3>Desconto no atendimento</h3>
+        <div class="preco"><span id="aniversario-desconto">10%</span></div>
+        <ul>
+          <li>Vale no dia do aniversário</li>
+          <li>Não soma com outros descontos: vence o maior</li>
+        </ul>
+      </div>
+      <div class="cartao oferta" id="aniversario-brinde-bloco" hidden>
+        <span class="oferta-rotulo">Brinde</span>
+        <h3>Cortesia da casa</h3>
+        <p><span id="aniversario-brinde"></span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================= vip -->
+<section class="faixa faixa-abismo" id="vip">
+  <div class="dentro">
+    <div class="secao-cabeca">
+      <div>
+        <p class="secao-rotulo">Sala fechada</p>
+        <h2>Atendimento VIP</h2>
+      </div>
+      <p class="chamada secao-cabeca-texto">
+        Fora da cadeira do salão: sala privativa, com horário próprio. A aba
+        VIP do aplicativo só aparece quando a casa oferece o serviço.
+      </p>
+    </div>
+
+    <!-- VIP:inicio -->
+    <div id="vip-lista">
+      <div class="cardapio cardapio-produtos" style="margin-top:2rem">
+        <div class="cardapio-cat" data-categoria="vip">
+          <div class="cardapio-cat-cabeca">
+            <h3><span class="cardapio-ico" aria-hidden="true"></span> Sala VIP</h3>
+          </div>
+          <ul>
+          <li data-servico="corte-vip"><span class="nome">Corte Vip</span><span class="pontilhado"></span><span class="dur">50 min</span><span class="valor">a partir de R$ 100,00</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- VIP:fim -->
   </div>
 </section>
 
 <!-- ================================================================= app -->
 <section class="faixa" id="app">
   <div class="dentro">
-    <p class="secao-rotulo">O aplicativo</p>
-    <h2>Feito para a casa, não para uma casa qualquer</h2>
+    <div class="app-bloco">
+      <div class="app-texto">
+        <p class="secao-rotulo">O aplicativo</p>
+        <h2>Feito para a casa, não para uma casa qualquer</h2>
+        <p class="chamada">
+          Agende em poucos toques, veja o preço certo antes de confirmar e
+          acompanhe histórico, moedas e produtos &mdash; sem intermediário.
+        </p>
 
-    <div class="grade" style="margin-top:2.5rem">
-      <div class="cartao">
-        <h3>Preço certo antes de confirmar</h3>
-        <p>O app mostra o que você vai pagar já com plano, promoção e desconto
-        aplicados. Sem surpresa no balcão.</p>
+        <ul class="app-lista">
+          <li>
+            <strong>Preço certo antes de confirmar</strong>
+            <span>Combo, pacote, convite e aniversário já aplicados. Sem surpresa no balcão.</span>
+          </li>
+          <li>
+            <strong>Escolha do profissional</strong>
+            <span>Cada barbeiro tem a própria agenda. Você escolhe quem corta.</span>
+          </li>
+          <li>
+            <strong>Cancelamento pelo app</strong>
+            <span>Até <span data-cancelamento-horas>3</span> horas antes, sem telefonema. O horário volta a ficar livre.</span>
+          </li>
+          <li>
+            <strong>Convide e ganhe</strong>
+            <span>Seu código dá desconto ao amigo e moedas para os dois.</span>
+          </li>
+          <li>
+            <strong>Pacotes e VIP</strong>
+            <span>Monte o pacote no app e retire o crédito no balcão. VIP tem sala própria.</span>
+          </li>
+          <li>
+            <strong>Sua conta é sua</strong>
+            <span>Edita o perfil e apaga a conta quando quiser &mdash; pelo app ou por esta página.</span>
+          </li>
+        </ul>
+
+        <div class="botoes app-lojas">
+          <span class="botao botao-loja" aria-disabled="true">App Store — em breve</span>
+          <span class="botao botao-loja" aria-disabled="true">Google Play — em breve</span>
+        </div>
       </div>
-      <div class="cartao">
-        <h3>Escolha do profissional</h3>
-        <p>Cada barbeiro tem a própria agenda e os próprios horários livres.
-        Você escolhe quem corta.</p>
-      </div>
-      <div class="cartao">
-        <h3>Cancelamento pelo aplicativo</h3>
-        <p>Até 3 horas antes, sem telefonema e sem constrangimento. O horário
-        volta a ficar livre para outra pessoa.</p>
-      </div>
-      <div class="cartao">
-        <h3>Seu histórico</h3>
-        <p>O que você fez, quando, com quem e quanto pagou. Inclusive dos
-        atendimentos feitos antes de você criar a conta.</p>
-      </div>
-      <div class="cartao cartao-destaque">
-        <h3><img class="icone-moeda" src="assets/moeda-virtual.png" width="40" height="40" alt=""> Moeda virtual</h3>
-        <p>Ganhe moedas convidando amigos, na roleta da casa ou ao comprar
-        pacotes. Vale em serviço e produto &mdash; não saca, não expira. Você
-        entra no programa quando quiser.</p>
-      </div>
-      <div class="cartao">
-        <h3>Produtos</h3>
-        <p>Veja o que tem na prateleira, monte o pedido e retire no balcão.
-        Assinante Premium leva desconto em produto, como na loja.</p>
-      </div>
-      <div class="cartao">
-        <h3>Pacotes</h3>
-        <p>Monte o seu: cinco cortes, dois alisamentos &mdash; o desconto
-        aparece enquanto você monta. Paga no balcão ou, em breve, no app.</p>
-      </div>
-      <div class="cartao">
-        <h3>Convide e ganhe</h3>
-        <p>Compartilhe seu link. Quando o convidado for atendido, os dois
-        ganham moedas &mdash; valor e prazo definidos pela casa.</p>
-      </div>
-      <div class="cartao">
-        <h3>Pagamento no app</h3>
-        <p>Hoje o pagamento é no balcão. <strong>Pagamento pelo aplicativo
-        chega em breve</strong> &mdash; Pix e cartão, com moedas abatendo o
-        total. Enquanto isso, o checkout simulado roda só em teste interno.</p>
-      </div>
-      <div class="cartao">
-        <h3>Sua conta é sua</h3>
-        <p>Você lê e edita apenas o seu perfil, e apaga a conta quando quiser
-        &mdash; pelo app ou por esta página.</p>
-      </div>
+
+      <aside class="app-visual" aria-label="Moeda virtual">
+        <div class="app-visual-anel" aria-hidden="true">
+          <img class="app-visual-moeda" src="assets/moeda-virtual.png" width="96" height="96" alt="">
+        </div>
+        <span class="app-visual-rotulo">Ganhe e acumule moedas</span>
+        <p>Troque créditos por serviço ou produto na recepção. Não saca, não expira.</p>
+        <a class="hero-promo-link" href="#agendar">Como marcar &rarr;</a>
+      </aside>
     </div>
   </div>
 </section>
@@ -536,34 +585,44 @@
   <div class="rodape-grade">
     <div>
       <img class="marca" src="assets/marca.svg" alt="MR CUT'S PREMIUM">
-      <p style="font-size:0.88rem">
-        Av. Miguel Perrela, 987 &mdash; Lj 18<br>
-        Castelo, Belo Horizonte &mdash; MG, 31330-290</p>
-      <p style="font-size:0.88rem; margin-top:0.75rem">
-        Seg–sex 8h–20h · sáb 8h–18h<br>
-        Domingo fechado</p>
+      <p class="rodape-sobre">
+        Barbearia de hora marcada em Belo Horizonte. Corte, barba e química
+        com preço visto antes de confirmar.
+      </p>
     </div>
     <div>
-      <h4>A barbearia</h4>
+      <h4>Localização</h4>
+      <p class="rodape-texto">
+        Av. Miguel Perrela, 987 &mdash; Lj 18<br>
+        Castelo, Belo Horizonte &mdash; MG<br>
+        31330-290
+      </p>
+      <p class="rodape-destaque">
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Miguel+Perrela,+987+-+Lj+18+-+Castelo,+Belo+Horizonte+-+MG,+31330-290"
+           target="_blank" rel="noopener">Abrir no mapa</a>
+      </p>
+    </div>
+    <div>
+      <h4>Atendimento</h4>
+      <ul class="rodape-horarios">
+        <li><span>Segunda a sexta</span><span>8h–20h</span></li>
+        <li><span>Sábado</span><span>8h–18h</span></li>
+        <li><span>Domingo</span><span class="fechado">Fechado</span></li>
+      </ul>
+      <p class="rodape-nota">Intervalo de <span data-intervalo-min>10</span> min entre horários na agenda.</p>
+    </div>
+    <div>
+      <h4>Institucional</h4>
       <ul>
         <li><a href="#servicos">Serviços e preços</a></li>
-        <li><a href="#produtos">Produtos</a></li>
-        <li><a href="#planos">Planos mensais</a></li>
+        <li><a href="#combos">Combos</a></li>
+        <li><a href="#pacotes">Pacotes</a></li>
+        <li><a href="#convite">Convide e ganhe</a></li>
+        <li><a href="#app">O aplicativo</a></li>
         <li><a href="#equipe">Equipe</a></li>
         <li><a href="#agendar">Marcar horário</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Aplicativo</h4>
-      <ul>
-        <li><a href="#app">O que ele faz</a></li>
         <li><a href="suporte.html">Suporte</a></li>
         <li><a href="exclusao-de-conta.html">Excluir minha conta</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Legal</h4>
-      <ul>
         <li><a href="politica-de-privacidade.html">Política de privacidade</a></li>
         <li><a href="termos-de-uso.html">Termos de uso</a></li>
       </ul>
@@ -572,6 +631,7 @@
 
   <div class="rodape-fim">
     <span>&copy; 2026 MR CUT'S PREMIUM</span>
+    <span>Belo Horizonte &middot; Minas Gerais</span>
     <span><a href="https://www.instagram.com/barbearia_mrcutspremium/"
        target="_blank" rel="noopener">&#64;barbearia_mrcutspremium</a></span>
   </div>
