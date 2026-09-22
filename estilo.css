@@ -400,13 +400,18 @@ section[hidden],
   min-height: 52px;
 }
 
-.botao-cheio {
+/* As duas classes de propósito. Com `.botao-cheio` sozinho (0,1,0), a regra
+   `.topo nav a` (0,1,2) ganhava e pintava o CTA do cabeçalho de cinza sobre
+   o cobre -- o contrário do que estas linhas mandam. Com `.botao.botao-cheio`
+   (0,2,0) o preto vale em qualquer lugar da página, inclusive dentro de
+   blocos que pintam os próprios links. */
+.botao.botao-cheio {
   background: var(--cobre);
   /* Nunca creme sobre cobre: dá 3:1 e reprova em acessibilidade. */
   color: var(--sobre-cobre);
 }
 
-.botao-cheio:hover {
+.botao.botao-cheio:hover {
   background: var(--cobre-claro);
   color: var(--sobre-cobre);
   opacity: 0.95;
