@@ -30,7 +30,7 @@ pago. Além do custo, há três razões que valem por si:
 | `exclusao-de-conta.html` | Exigida pelo Google Play, **além** do botão dentro do app |
 | `suporte.html` | Contato e perguntas frequentes |
 | `estilo.css` | Folha única das cinco páginas |
-| `assets/` | Marca em vetor, ícone e a fonte Bodoni Moda |
+| `assets/` | Marca em vetor, ícone e as fontes Bodoni Moda e Archivo |
 | `PENDENCIAS.md` | **O que falta preencher antes de publicar** |
 
 ## Ver o site na sua máquina
@@ -96,9 +96,15 @@ folha muda junto.
 
 **A fonte é local, não é Google Fonts.** Fonte buscada na rede entrega o IP de
 cada visitante a um terceiro — coisa que a política de privacidade teria de
-declarar, na própria página da política. Só o Bodoni Moda vem embutido, porque é
-a letra do monograma; o corpo usa a pilha de fontes do sistema, e é por isso que
-a página carrega rápido. A licença OFL acompanha o arquivo, como ela exige.
+declarar, na própria página da política. A licença OFL acompanha cada arquivo,
+como ela exige.
+
+**Desde o redesenho de 09/2026, o corpo usa Archivo, a mesma do app.** Antes era
+a pilha do sistema, e a diferença era visível: site e aplicativo não pareciam a
+mesma casa. **A troca custa 658 KB** no arquivo da fonte — por isso ela entra com
+`font-display: swap`: o texto aparece na hora, na fonte do sistema, e troca
+quando a Archivo chega. Quem estiver medindo carregamento vai ver esse peso; ele
+é a decisão, não um descuido.
 
 **As telas do app na landing são recriação em HTML, não fotografia.** Tentativa de
 trocar por captura gerada em teste Flutter (sem as fontes da marca) saiu ilegível —

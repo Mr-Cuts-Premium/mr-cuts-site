@@ -68,6 +68,14 @@
           <span class="n"><span data-intervalo-min>10</span> min</span>
           <span class="r">de intervalo na agenda</span>
         </div>
+        <div class="hero-dado" id="hero-dado-cadeiras" hidden>
+          <span class="n" id="hero-n-cadeiras">&mdash;</span>
+          <span class="r">cadeiras na casa</span>
+        </div>
+        <div class="hero-dado" id="hero-dado-nota" hidden>
+          <span class="n" id="hero-n-nota">&mdash;</span>
+          <span class="r" id="hero-r-nota">de avaliação</span>
+        </div>
         <div class="hero-dado">
           <span class="n">Seg&ndash;Sex</span>
           <span class="r">8h–20h · sáb até 18h</span>
@@ -189,6 +197,10 @@
     </div>
 
     <p id="cardapio-status" class="cardapio-status" aria-live="polite" hidden></p>
+
+    <!-- Preenchido pelo cardapio.js a partir das categorias que de fato
+         vieram: categoria sem serviço não vira botão. -->
+    <div class="cardapio-filtros" id="cardapio-filtros" hidden></div>
 
     <!-- CARDAPIO:inicio -->
     <div class="cardapio" style="margin-top:2rem">

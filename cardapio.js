@@ -32,6 +32,14 @@
     }
   ];
 
+  // O filtro vale também para o cardápio estático da página: sem rede, ele
+  // continua sendo a única forma de achar "barba" sem rolar tudo.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { renderFiltros(); });
+  } else {
+    renderFiltros();
+  }
+
   if (!config.supabaseUrl || !config.supabaseAnonKey) {
     return;
   }
@@ -86,7 +94,11 @@
       ativo: 'eq.true',
       para_venda: 'eq.true',
       order: 'ordem.asc'
-    })
+    }),
+    // Números concretos do topo (9a): quantas cadeiras a casa tem e a nota
+    // dela. São dados que a casa publica -- não há número inventado aqui.
+    rest('profissionais', { select: 'id', ativo: 'eq.true' }),
+    rest('avaliacoes', { select: 'nota', publica: 'eq.true' })
   ]).then(function (results) {
     var services = valueOf(results[0], []);
     var combos = valueOf(results[1], []);
@@ -127,6 +139,13 @@
     }
 
     renderVip(services, results[0].status === 'fulfilled');
+
+    if (results[5].status === 'fulfilled') {
+      renderCadeiras(valueOf(results[5], []));
+    }
+    if (results[6].status === 'fulfilled') {
+      renderNota(valueOf(results[6], []));
+    }
   }).finally(function () {
     if (!servicesRoot) {
       return;
@@ -176,6 +195,86 @@
       return fallback;
     }
     return result.value;
+  }
+
+  function renderCadeiras(profissionais) {
+    if (!profissionais.length) {
+      return;
+    }
+    setText('hero-n-cadeiras', String(profissionais.length));
+    mostrar('hero-dado-cadeiras');
+  }
+
+  function renderNota(avaliacoes) {
+    var notas = avaliacoes
+      .map(function (a) { return Number(a.nota); })
+      .filter(function (n) { return !isNaN(n); });
+    // Sem avaliação não há nota: zero estrelas seria uma nota, e a casa não
+    // tirou nota nenhuma.
+    if (!notas.length) {
+      return;
+    }
+    var media = notas.reduce(function (t, n) { return t + n; }, 0) / notas.length;
+    setText('hero-n-nota', '★ ' + media.toFixed(1).replace('.', ','));
+    setText('hero-r-nota', notas.length === 1
+      ? 'de 1 avaliação'
+      : 'de ' + notas.length + ' avaliações');
+    mostrar('hero-dado-nota');
+  }
+
+  function mostrar(id) {
+    var el = document.getElementById(id);
+    if (el) {
+      el.removeAttribute('hidden');
+    }
+  }
+
+  /// Os botões saem das categorias que de fato vieram: categoria vazia não
+  /// vira botão que filtra para o nada.
+  function renderFiltros() {
+    var caixa = document.getElementById('cardapio-filtros');
+    if (!caixa || !servicesRoot) {
+      return;
+    }
+    var colunas = Array.prototype.slice.call(
+      servicesRoot.querySelectorAll('.cardapio-cat'));
+    caixa.replaceChildren();
+    if (colunas.length < 2) {
+      caixa.setAttribute('hidden', '');
+      return;
+    }
+
+    var botoes = [];
+    function escolher(alvo) {
+      colunas.forEach(function (col) {
+        col.hidden = alvo !== null && col.dataset.categoria !== alvo;
+      });
+      botoes.forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.dataset.alvo === String(alvo)));
+      });
+    }
+
+    function botao(rotulo, alvo) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'cardapio-filtro';
+      b.textContent = rotulo;
+      b.dataset.alvo = String(alvo);
+      b.setAttribute('aria-pressed', String(alvo === null));
+      b.addEventListener('click', function () { escolher(alvo); });
+      botoes.push(b);
+      return b;
+    }
+
+    caixa.appendChild(botao('Tudo', null));
+    colunas.forEach(function (col) {
+      // O h3, e não a cabeça inteira: ela também carrega o selo "A partir
+      // de", que viraria parte do rótulo do botão.
+      var titulo = col.querySelector('.cardapio-cat-cabeca h3');
+      var nome = titulo ? titulo.textContent.trim() : col.dataset.categoria;
+      caixa.appendChild(botao(nome, col.dataset.categoria || ''));
+    });
+    caixa.removeAttribute('hidden');
   }
 
   function renderServices(services) {
@@ -234,6 +333,7 @@
     servicesRoot.replaceChildren(fragment);
     setStatus('', '');
     setText('hero-n-servicos', String(regular.length));
+    renderFiltros();
   }
 
   function buildCategory(column, items) {

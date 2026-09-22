@@ -28,6 +28,16 @@
   font-display: swap;
 }
 
+/* Archivo é a voz funcional da marca, a mesma do app. Sem ela aqui o corpo
+   caía na fonte do sistema, e site e aplicativo deixavam de parecer a mesma
+   casa -- a pendência que o guia do redesenho listou. */
+@font-face {
+  font-family: 'Archivo';
+  src: url('assets/fontes/Archivo.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 :root {
   /* fundos */
   --abismo: #0a0c10;
@@ -57,7 +67,7 @@
   --carmim-fundo: #241419;
 
   --serifa: 'Bodoni Moda', Georgia, 'Times New Roman', serif;
-  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --sans: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
   --margem: 20px;
   --largura: 1100px;
@@ -148,10 +158,12 @@ h3 {
 
 /* O Bodoni só a partir de 20px — abaixo disso as hastes finas se partem
    sobre fundo escuro. É regra dura, herdada de tipografia.dart. */
+/* 60px no monitor (9a). A manchete é a única coisa da página que pode
+   gritar; em 44 ela empatava com os títulos de seção. */
 h1 {
-  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  font-size: clamp(1.75rem, 6vw, 3.75rem);
   font-variation-settings: 'wght' 700, 'opsz' 24;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.025em;
 }
 
 h2 {
@@ -478,7 +490,9 @@ section[hidden],
 
 .hero-dados {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* Auto-fit: o número de cadeiras e a nota entram sem espremer os outros,
+     e no celular eles quebram em duas linhas em vez de virar coluna fina. */
+  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
   gap: 0.65rem;
   margin-top: 1.75rem;
   padding: 0.85rem;
@@ -917,6 +931,34 @@ section[hidden],
   color: var(--nevoa);
 }
 
+/* Filtro por categoria (9a). Com vinte e quatro serviços, quem quer barba
+   rolava a página inteira. */
+.cardapio-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.cardapio-filtro {
+  min-height: 2.75rem;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--linha);
+  border-radius: 8px;
+  background: var(--superficie);
+  color: var(--nevoa);
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cardapio-filtro[aria-pressed='true'] {
+  background: var(--cobre);
+  border-color: var(--cobre);
+  color: var(--sobre-cobre, #0a0c10);
+}
+
 .cardapio {
   display: grid;
   gap: 1rem;
@@ -927,6 +969,9 @@ section[hidden],
 @media (min-width: 800px) {
   .cardapio {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* 48px entre as colunas (9a): com 16 as duas listas de preço leem como
+       uma tabela de quatro colunas. */
+    column-gap: 3rem;
   }
 }
 
