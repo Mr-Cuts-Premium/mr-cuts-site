@@ -116,26 +116,18 @@
 
     if (results[1].status === 'fulfilled') {
       renderCombos(combos);
-    } else {
-      console.warn('[vitrine] combos estáticos:', results[1].reason);
     }
 
     if (results[2].status === 'fulfilled') {
       renderPackages(packages);
-    } else {
-      console.warn('[vitrine] pacotes estáticos:', results[2].reason);
     }
 
     if (results[3].status === 'fulfilled') {
       renderShop(shop);
-    } else {
-      console.warn('[vitrine] regras estáticas:', results[3].reason);
     }
 
     if (results[4].status === 'fulfilled') {
       renderProducts(products);
-    } else {
-      console.warn('[vitrine] produtos estáticos:', results[4].reason);
     }
 
     renderVip(services, results[0].status === 'fulfilled');
