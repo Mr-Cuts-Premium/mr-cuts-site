@@ -55,8 +55,8 @@ Para ninguém sair conferindo o que já foi conferido. Tudo abaixo saiu de
 - As faixas de desconto dos pacotes
 - Convite (desconto do convidado e moedas), aniversário e atendimento VIP
 - Produtos à venda no balcão
-- A equipe: Vandinho (dono, atende), Felipe, Breno, e Eliane na recepção
-- Slugs dos barbeiros: `vandinho`, `felipe`, `breno` (links placeholder na equipe)
+- A equipe: Vandinho (dono, atende), Philipe, Breno, e Eliane na recepção
+- Slugs dos barbeiros: `vandinho`, `philipe`, `breno` (links placeholder na equipe)
 - Endereço: Av. Miguel Perrela, 987 — Lj 18, Castelo, Belo Horizonte — MG, 31330-290
 - Jornada: seg–sex 8h–20h, sábado 8h–18h, domingo fechado
 - Cidade: Belo Horizonte, MG
