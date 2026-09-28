@@ -58,6 +58,7 @@ Para ninguém sair conferindo o que já foi conferido. Tudo abaixo saiu de
 - A equipe: Vandinho (dono, atende), Philipe, Breno, e Eliane na recepção
 - Slugs dos barbeiros: `vandinho`, `philipe`, `breno` (links placeholder na equipe)
 - Endereço: Av. Miguel Perrela, 987 — Lj 18, Castelo, Belo Horizonte — MG, 31330-290
+- Razão social e CNPJ: MR. CUTS PREMIUM LTDA, 26.885.990/0001-86 — rodapé de todas as páginas, política §1, termos e suporte
 - Jornada: seg–sex 8h–20h, sábado 8h–18h, domingo fechado
 - Cidade: Belo Horizonte, MG
 - Instagram: `@barbearia_mrcutspremium`
