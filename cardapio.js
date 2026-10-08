@@ -82,6 +82,8 @@
         'credito_indicacao_validade_dias',
         'desconto_aniversario_pct',
         'aniversario_brinde_texto',
+        'aniversario_servico:servicos!barbearia_aniversario_servico_brinde_id_fkey(nome,ativo)',
+        'aniversario_produto:produtos!barbearia_aniversario_produto_brinde_id_fkey(nome,ativo)',
         'cancelamento_limite_horas',
         'intervalo_grade_min',
         'desconto_primeiro_corte_pct'
@@ -581,16 +583,29 @@
       return;
     }
     var discount = Number(shop.desconto_aniversario_pct || 0);
+    var service = activeGiftName(shop.aniversario_servico);
+    var product = activeGiftName(shop.aniversario_produto);
     var gift = (shop.aniversario_brinde_texto || '').trim();
-    if (discount <= 0 && !gift) {
+    if (discount <= 0 && !service && !product && !gift) {
       setSectionVisible(section, false);
       return;
     }
     setText('aniversario-desconto', discount > 0 ? formatPercent(discount) : '');
+    setText('aniversario-servico', service);
+    setText('aniversario-produto', product);
     setText('aniversario-brinde', gift);
     toggleHidden('aniversario-desconto-bloco', discount <= 0);
+    toggleHidden('aniversario-servico-bloco', !service);
+    toggleHidden('aniversario-produto-bloco', !product);
     toggleHidden('aniversario-brinde-bloco', !gift);
     setSectionVisible(section, true);
+  }
+
+  function activeGiftName(item) {
+    if (!item || !item.ativo) {
+      return '';
+    }
+    return (item.nome || '').trim();
   }
 
   function renderVip(services, fromApi) {
